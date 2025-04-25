@@ -1,0 +1,301 @@
+body{
+    background-color: #1e1e1e;
+    color: white;
+}
+
+
+
+/* Home */
+#Home{
+    width: 100%;
+    height: 95vh;
+}
+
+/* Navbar */
+
+.navbar{
+    margin-left: 300px;
+}
+
+#navbarNav{
+    margin-left: 700px;
+}
+
+.nav-item{
+    margin-left: 15px;
+}
+
+.navbar-brand{
+    margin-left: -50px;
+}
+
+/* Description */
+.descriptionContainer{
+    margin-top: 100px;
+}
+.title{
+    margin-left: -90px;
+}
+.name1{
+    font-size: 80px;
+    margin-left: 10px;
+}
+.name2{
+    color: lightgreen;
+    font-size: 70px;
+    margin-left: 220px;
+}
+.description{
+    margin-left: 241px;
+    margin-right: 27px;
+}
+/* Sezione spam */
+.social{
+    margin-top: 40px;
+}
+.spam{
+    margin-left: 150px;
+}
+/* Sezione cv */
+.btn{
+    border-radius: 24px;
+    background-color: transparent;
+    color: lightgreen;
+    border-color: lightgreen;
+}
+
+/* Sezione social */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-left: -50px;
+  }
+  
+  .button {
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #2d2e32;
+    border: 2px solid #2d2e32;
+    transition: all 0.45s;
+  }
+  
+  .button:hover {
+    transform: rotate(360deg);
+    transform-origin: center center;
+    background-color: #ffff;
+    color: #2d2e32;
+  }
+  
+  .button:hover .btn-svg {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(305deg)
+      brightness(103%) contrast(103%);
+  }
+  
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+/* Sezione foto */
+
+
+.foto{
+    margin-top: -35px;
+    width: 50%;
+    border-radius: 250px;
+}
+
+/* Sezione details */
+
+.presentationDetail{
+    margin-top: 100px;
+    margin-left: 215px;
+}
+.number{
+    font-size: 48px;
+}
+.write{
+    margin-left: -40px;
+    margin-top: 8px;
+    width: 49px;
+}
+.detailsContainer{
+    flex-direction: row;
+}
+
+
+
+
+@media (max-width: 575.98px) {
+    .html{
+        overflow-x: hidden;
+    }
+    /* Navbar */
+    .navbar{
+        margin-left: 0px;
+        width: 100%;
+    }
+    #navbarNav.show {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+    
+    }
+    #navbarNav {
+        transition: all -1s ease-in-out;
+      }
+
+    .navbar-brand{
+        font-size: 30px;
+    }
+    .navbar-toggler{
+        font-size: 25px;
+    }
+    
+    .nav-item{
+        margin-left: -290px;
+    }
+
+    /* Description */
+
+    .rowDescription {
+        flex-direction: column-reverse;
+        margin-left: -190px;
+    }
+    .foto{
+        width: 75%;
+        margin-left: 180px;
+    }
+    .title{
+        width: 100%;
+        margin-left: 90px;
+        margin-top: 50px;
+        font-size: 20px;
+    }
+    .name{
+        width: 100%;
+        margin-left: 85px;
+    }
+    .name2{
+        width: 180%;
+        margin-left: -200px;
+        font-size: 40px;
+    }
+    .description{
+        width: 70%;
+        margin-left: 135px;
+    }
+
+    .btn{
+        width: 70%;
+        height: 130%;
+        margin-left: -10px;
+    }
+    .button-container{
+        margin-top: 25px;
+        margin-left: 180px;
+    }
+    .detailsContainer{
+        flex-direction: column;
+        margin-left: -300px;
+    }
+    .number{
+        font-size: 48px;
+    }
+    .write{
+        font-size: 20px;
+        width: 50%;
+        margin-left: -85px;
+    }
+}
+
+/*
+
+-- Navbar --
+.navbar{
+    margin-left: 0px;
+    width: 150%;
+}
+#navbarNav.show {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+
+}
+#navbarNav {
+    transition: all -1s ease-in-out;
+  }
+
+.navbar-brand{
+    font-size: 48px;
+}
+.navbar-toggler{
+    font-size: 35px;
+}
+
+.nav-item{
+    margin-left: -470px;
+}
+
+-- Description --
+
+.rowDescription {
+    flex-direction: column-reverse;
+}
+.foto{
+    width: 80%;
+    margin-left: 120px;
+}
+.title{
+    width: 100%;
+    margin-left: 90px;
+    margin-top: 45px;
+    font-size: 25px;
+}
+.name{
+    width: 100%;
+    margin-left: 85px;
+}
+.name2{
+    width: 180%;
+    margin-left: -130px;
+    font-size: 57px;
+}
+.description{
+    width: 125%;
+    margin-left: 50px;
+}
+
+.btn{
+    width: 120%;
+    height: 130%;
+    margin-left: -15px;
+}
+.button-container{
+    margin-top: 25px;
+    margin-left: 180px;
+}
+.detailsContainer{
+    flex-direction: column;
+    margin-left: -180px;
+}
+.number{
+    font-size: 48px;
+}
+.write{
+    font-size: 20px;
+    width: 50%;
+    margin-left: -85px;
+}
+
+*/
