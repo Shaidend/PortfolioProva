@@ -173,7 +173,7 @@ body{
     }
     .foto{
         width: 75%;
-        margin-left: 180px;
+        margin-left: 160px;
     }
     .title{
         width: 100%;
@@ -187,18 +187,18 @@ body{
     }
     .name2{
         width: 180%;
-        margin-left: -200px;
+        margin-left: -150px;
         font-size: 40px;
     }
     .description{
         width: 70%;
-        margin-left: 135px;
+        margin-left: 150px;
     }
 
     .btn{
         width: 70%;
         height: 130%;
-        margin-left: -10px;
+        margin-left: 0px;
     }
     .button-container{
         margin-top: 25px;
