@@ -173,7 +173,8 @@ body{
     }
     .foto{
         width: 75%;
-        margin-left: 70%;
+        margin-left: auto;
+        margin-right: auto;
     }
     .title{
         width: 100%;
