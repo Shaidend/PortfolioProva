@@ -138,6 +138,9 @@ body{
     .html{
         overflow-x: hidden;
     }
+    .body{
+        overflow-x: hidden;
+    }
     /* Navbar */
     .navbar{
         margin-left: 20px;
