@@ -140,7 +140,7 @@ body{
     }
     /* Navbar */
     .navbar{
-        margin-left: 60px;
+        margin-left: 40px;
         width: 100%;
     }
     #navbarNav.show {
@@ -173,7 +173,7 @@ body{
     }
     .foto{
         width: 75%;
-        margin-left: 145px;
+        margin-left: 155px;
     }
     .title{
         width: 100%;
@@ -187,7 +187,7 @@ body{
     }
     .name2{
         width: 180%;
-        margin-left: -165px;
+        margin-left: -175px;
         font-size: 40px;
     }
     .description{
@@ -198,7 +198,7 @@ body{
     .btn{
         width: 70%;
         height: 130%;
-        margin-left: 25px;
+        margin-left: 35px;
     }
     .button-container{
         margin-top: 25px;
