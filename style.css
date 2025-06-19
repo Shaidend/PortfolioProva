@@ -189,6 +189,7 @@ ul {
 
     /* Contacts */
 }
+
 @media (max-width: 425px) {
 
     /* Index */
@@ -326,11 +327,3 @@ ul {
 
     /* Contacts */
 }
-
-/*
-<div class="card-body p-0 d-flex justify-content-start logo">
-                                        <img src="TemporaryLogo.png"
-                                            class="fotoIndex rounded-circle border border-light border-opacity-0 border-dashed"
-                                            alt="">
-                                    </div>
-*/
