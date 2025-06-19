@@ -1,257 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <title>Bootstrap Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet" />
+    <title>Document</title>
+    <link rel="icon" href="TemporaryLogo.png" type="image/png">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <style> @import url(style.css); </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        @import url(style.css);
+    </style>
+
+    <script>
+        function animateNumbers() {
+            const counters = [
+                { element: document.querySelector('.counter-12'), target: 12, duration: 2000 },
+                { element: document.querySelector('.counter-26'), target: 26, duration: 2500 },
+                { element: document.querySelector('.counter-8'), target: 8, duration: 1500 },
+                { element: document.querySelector('.counter-500'), target: 500, duration: 3000 }
+            ];
+
+            counters.forEach(counter => {
+                let current = 0;
+                const increment = counter.target / (counter.duration / 16); // 60fps
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= counter.target) {
+                        current = counter.target;
+                        clearInterval(timer);
+                    }
+                    counter.element.textContent = Math.floor(current);
+                }, 16);
+            });
+        }
+
+        // Avvia l'animazione quando la pagina è caricata
+        window.addEventListener('load', animateNumbers);
+    </script>
 </head>
-<body class="p-3 m-0 border-0 bd-example m-0 border-0">
-    <!-- Navbar -->
-    <div class="container-fluid text-center justify-content-center align-self-center" id="Home">
-        <nav class="navbar navbar-expand-lg bg-transparent text-white" id="nav">
+
+<body class="body-custom">
+
+    <div class="container-fluid p-0 vh-100 d-flex flex-column">
+        <!-- Navbar Desktop (nascosta su mobile) -->
+        <div class="d-none d-lg-block">
+            <div class="row justify-content-center pt-3">
+                <div class="col-xl-8 col-lg-10">
+                    <nav class="navbar navbar-expand-lg navbar-glass rounded-bottom-4">
+                        <div class="container-fluid justify-content-between">
+                            <a class="navbar-brand text-white mb-1" href="#">Name</a>
+                            <div class="navbar-nav">
+                                <a class="nav-link mx-4" href="#" style="color: lightgreen;">Home</a>
+                                <a class="nav-link text-white mx-4" href="#">Services</a>
+                                <a class="nav-link text-white mx-4" href="#">Resume</a>
+                                <a class="nav-link text-white mx-4" href="#">Projects</a>
+                                <a class="nav-link text-white mx-4" href="#">Contacts</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navbar Mobile e Tablet (visibile su mobile e tablet) -->
+        <div class="d-block d-lg-none">
+            <nav class="navbar navbar-glass">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-white" href="#">Navbar</a>
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <i class="bi bi-list text-white fs-4"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Offcanvas Menu -->
+            <div class="offcanvas offcanvas-end offcanvas-glass" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header border-bottom border-light border-opacity-25">
+                    <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-3 border-bottom border-light border-opacity-25" href="#">
+                                <i class="bi bi-house me-2"></i>Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-3 border-bottom border-light border-opacity-25" href="#">
+                                <i class="bi bi-gear me-2"></i>Services
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-3 border-bottom border-light border-opacity-25" href="#">
+                                <i class="bi bi-box me-2"></i>Product
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-3" href="#">
+                                <i class="bi bi-info-circle me-2"></i>Projects
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-3" href="#">
+                                <i class="bi bi-info-circle me-2"></i>Contacts
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenuto principale centrato -->
+        <div class="flex-grow-1 d-flex align-items-center justify-content-center mb-5">
             <div class="container-fluid">
-              <a class="navbar-brand text-white" href="index.html">David.</a>
-              <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link text-white active" aria-current="page" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="Services.html">Services</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="Resume.html">Resume</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="Projects.html">Projects</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="Contact.html">Contact</a>
-                  </li>
-                </ul>
-              </div>
+                <div class="row justify-content-center">
+                    <div class="col-xl-8 col-lg-10">
+                        <div class="row g-3">
+                            <!-- Prima card -->
+                            <div class="col-lg-6 col-md-10 col-11 order-2 order-lg-1">
+                                <div class="card bg-transparent border-0">
+                                    <div class="card-body p-0 text-start">
+                                        <h5 class="card-title text-white mb-3 jobTitle">Software & Web Developer</h5>
+                                        <h1 class="text-white namePt1">Hello I'm</h1>
+                                        <h1 class="namePt2" style="color: lightgreen;">Insert your Name</h1>
+                                        <p class="description" style="color: grey;">
+                                            Here it is a quick description of my self
+                                        </p>
+
+                                        <!-- STRUTTURA MODIFICATA: uso row per permettere il wrapping -->
+                                        <div class="row mt-4 g-3 align-items-center">
+                                            <!-- Bottone: occupa tutta la larghezza su mobile, parte su desktop -->
+                                            <div class="col-12 col-lg-5">
+                                                <button class="cvButton btn btn-outline-light px-4 rounded-5">
+                                                    Scopri di più
+                                                </button>
+                                            </div>
+                                            <!-- Social: occupa tutta la larghezza su mobile, resto su desktop -->
+                                            <div class="col-12 col-lg-7">
+                                                <ul class="example-2 mb-0">
+                                                    <li class="icon-content">
+                                                        <a href="https://linkedin.com/" aria-label="LinkedIn"
+                                                            data-social="linkedin">
+                                                            <div class="filled"></div>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" fill="currentColor" class="bi bi-linkedin"
+                                                                viewBox="0 0 16 16" xml:space="preserve">
+                                                                <path
+                                                                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+                                                                    fill="currentColor"></path>
+                                                            </svg>
+                                                        </a>
+                                                        <div class="tooltip">LinkedIn</div>
+                                                    </li>
+                                                    <li class="icon-content">
+                                                        <a href="https://www.github.com/" aria-label="GitHub"
+                                                            data-social="github">
+                                                            <div class="filled"></div>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" fill="currentColor" class="bi bi-github"
+                                                                viewBox="0 0 16 16" xml:space="preserve">
+                                                                <path
+                                                                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                                                                    fill="currentColor"></path>
+                                                            </svg>
+                                                        </a>
+                                                        <div class="tooltip">GitHub</div>
+                                                    </li>
+                                                    <li class="icon-content">
+                                                        <a href="https://www.instagram.com/" aria-label="Instagram"
+                                                            data-social="instagram">
+                                                            <div class="filled"></div>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" fill="currentColor" class="bi bi-instagram"
+                                                                viewBox="0 0 16 16" xml:space="preserve">
+                                                                <path
+                                                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+                                                                    fill="currentColor"></path>
+                                                            </svg>
+                                                        </a>
+                                                        <div class="tooltip">Instagram</div>
+                                                    </li>
+                                                    <li class="icon-content">
+                                                        <a href="https://youtube.com/" aria-label="Youtube"
+                                                            data-social="youtube">
+                                                            <div class="filled"></div>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" fill="currentColor" class="bi bi-youtube"
+                                                                viewBox="0 0 16 16" xml:space="preserve">
+                                                                <path
+                                                                    d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
+                                                                    fill="currentColor"></path>
+                                                            </svg>
+                                                        </a>
+                                                        <div class="tooltip">Youtube</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Seconda card -->
+                            <div class="col-lg-6 col-md-10 col-11 order-1 order-lg-2">
+                                <div class="card bg-transparent border-0">
+                                    <div class="card-body p-0 d-flex justify-content-start logo">
+                                        <img src="TemporaryLogo.png"
+                                            class="fotoIndex rounded-circle border border-light border-opacity-0 border-dashed"
+                                            alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid bruhScritta">
+                            <div class="row text-center g-4">
+                                <div class="col-lg-3 col-md-6 col-sm-12 me-0">
+                                    <div class="d-flex align-items-center justify-content-center me-5">
+                                        <h1 class="text-white display-5 fw-bold mb-0 me-4 counter-12">12</h1>
+                                        <p class="text-white mb-0">Years of<br>experience</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="d-flex align-items-center justify-content-center me-5">
+                                        <h1 class="text-white display-5 fw-bold mb-0 me-4 counter-26">26</h1>
+                                        <p class="text-white mb-0">Projects<br>completed</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="d-flex align-items-center justify-content-center me-5">
+                                        <h1 class="text-white display-5 fw-bold mb-0 me-4 counter-8">8</h1>
+                                        <p class="text-white mb-0">Technologies<br>mastered</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="mbareScritta d-flex align-items-center justify-content-center">
+                                        <h1 class="text-white display-5 fw-bold mb-0 me-4 counter-500">500</h1>
+                                        <p class="text-white mb-0">Code<br>commits</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </nav>
-        <!-- Description -->
-        <div class="descriptionContainer container-fluid">
-          <div class="col">
-            <div class="rowDescription row">
-              <div class="col order-first">
-                <div class="col">
-                  <p class="title">Software and Web Developer</p>
-                </div>
-                <div class="name col">
-                  <h1 class="name1">Hello I'm</h1>
-                  <h1 class="name2">David Capezzuto</h1>
-                </div>
-                <div class="col">
-                  <p class="description">
-                    I'm a cs student, junior developer, passionate about coding, 
-                    learning new things and building new project either software and hardware
-                  </p>
-                </div>
-                <div class="social col">
-                  <div class="row">
-                    <div class="spam col">
-                      <button type="button" class="btn btn-primary">Download CV</button>
-                    </div>
-                    <div class="col">
-                      <div class="button-container">
-                        <button class="button flex-center">
-                          <svg
-                            viewBox="0 0 24 24"
-                            class="btn-svg"
-                            width="22px"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g
-                              id="SVGRepo_tracerCarrier"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            ></g>
-                            <g id="SVGRepo_iconCarrier">
-                              <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
-                                fill="#fff"
-                              ></path>
-                              <path
-                                d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
-                                fill="#fff"
-                              ></path>
-                              <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z"
-                                fill="#fff"
-                              ></path>
-                            </g>
-                          </svg>
-                        </button>
-                        <button class="button flex-center">
-                          <svg
-                            viewBox="0 0 20 20"
-                            width="22px"
-                            class="btn-svg"
-                            version="1.1"
-                            xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                            fill="#fff"
-                            stroke="#fff"
-                          >
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g
-                              id="SVGRepo_tracerCarrier"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            ></g>
-                            <g id="SVGRepo_iconCarrier">
-                              <title>github [#fff142]</title>
-                              <desc>Created with Sketch.</desc>
-                              <defs></defs>
-                              <g
-                                id="Page-1"
-                                stroke="none"
-                                stroke-width="1"
-                                fill="none"
-                                fill-rule="evenodd"
-                              >
-                                <g
-                                  id="Dribbble-Light-Preview"
-                                  transform="translate(-140.000000, -7559.000000)"
-                                  fill="#fff"
-                                >
-                                  <g id="icons" transform="translate(56.000000, 160.000000)">
-                                    <path
-                                      d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399"
-                                      id="github-[#fff142]"
-                                    ></path>
-                                  </g>
-                                </g>
-                              </g>
-                            </g>
-                          </svg>
-                        </button>
-                        <button class="button flex-center">
-                          <svg
-                            stroke="#fff"
-                            fill="#fff"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns="http://www.w3.org/2000/svg"
-                            version="1.1"
-                            class="btn-svg"
-                            width="22px"
-                            viewBox="0 -3 20 20"
-                          >
-                            <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
-                            <g
-                              stroke-linejoin="round"
-                              stroke-linecap="round"
-                              id="SVGRepo_tracerCarrier"
-                            ></g>
-                            <g id="SVGRepo_iconCarrier">
-                              <title>youtube [#fff168]</title>
-                              <desc>Created with Sketch.</desc>
-                              <defs></defs>
-                              <g
-                                fill-rule="evenodd"
-                                fill="none"
-                                stroke-width="1"
-                                stroke="none"
-                                id="Page-1"
-                              >
-                                <g
-                                  fill="#fff"
-                                  transform="translate(-300.000000, -7442.000000)"
-                                  id="Dribbble-Light-Preview"
-                                >
-                                  <g transform="translate(56.000000, 160.000000)" id="icons">
-                                    <path
-                                      id="youtube-[#fff168]"
-                                      d="M251.988432,7291.58588 L251.988432,7285.97425 C253.980638,7286.91168 255.523602,7287.8172 257.348463,7288.79353 C255.843351,7289.62824 253.980638,7290.56468 251.988432,7291.58588 M263.090998,7283.18289 C262.747343,7282.73013 262.161634,7282.37809 261.538073,7282.26141 C259.705243,7281.91336 248.270974,7281.91237 246.439141,7282.26141 C245.939097,7282.35515 245.493839,7282.58153 245.111335,7282.93357 C243.49964,7284.42947 244.004664,7292.45151 244.393145,7293.75096 C244.556505,7294.31342 244.767679,7294.71931 245.033639,7294.98558 C245.376298,7295.33761 245.845463,7295.57995 246.384355,7295.68865 C247.893451,7296.0008 255.668037,7296.17532 261.506198,7295.73552 C262.044094,7295.64178 262.520231,7295.39147 262.895762,7295.02447 C264.385932,7293.53455 264.28433,7285.06174 263.090998,7283.18289"
-                                    ></path>
-                                  </g>
-                                </g>
-                              </g>
-                            </g>
-                          </svg>
-                        </button>
-                      </div>                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col order-last">
-                <img class="foto" src="FotoIg.jpg" alt="">
-              </div>
-            </div>
-          </div>
-          <!-- Details -->
-          <div class="col">
-            <div class="presentationDetail container text-center">
-              <div class="detailsContainer row align-items-center d-flex">
-                <div class="col" id="details">
-                  <div class="row">
-                    <div class="col order-first" id="detailsYear">
-                      <h1 class="number"><b>1.5+</b></h1>
-                    </div>
-                    <div class="col order-last">
-                      <p class="write">
-                        Year of Experience
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col" id="details">
-                  <div class="row">
-                    <div class="col order-first" id="detailsYear">
-                      <h1 class="number"><b>5+</b></h1>
-                    </div>
-                    <div class="col order-last">
-                      <p class="write">
-                        Technical Skills
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col" id="details">  
-                  <div class="row">
-                    <div class="col order-first" id="detailsYear">
-                      <h1 class="number"><b>3+</b></h1>
-                    </div>
-                    <div class="col order-last">
-                      <p class="write">
-                        Projects Completed
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col" id="details">
-                  <div class="row">
-                    <div class="col order-first" id="detailsYear">
-                      <h1 class="number"><b>3+</b></h1>
-                    </div>
-                    <div class="col order-last">
-                      <p class="write">
-                        Satisfied Clients
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
     </div>
+
+
 </body>
+
 </html>

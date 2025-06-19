@@ -1,304 +1,336 @@
-body{
+.body-custom {
     background-color: #1e1e1e;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Glassmorphism per navbar */
+.navbar-glass {
+    background: transparent !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px none rgba(255, 255, 255, 0.1);
+}
+
+/* Hover effect per nav-link */
+.nav-link:hover {
+    color: lightgreen !important;
+    transition: underline 0.3s ease;
+}
+
+/* Offcanvas personalizzato */
+.offcanvas-glass {
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(15px);
+}
+
+
+/* Bottoni spam */
+ul {
+    list-style: none;
+    margin-left: -200px;
+}
+
+.example-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.example-2 .icon-content {
+    margin: 0 10px;
+    position: relative;
+}
+
+.example-2 .icon-content .tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.example-2 .icon-content:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -50px;
+}
+
+.example-2 .icon-content a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #4d4d4d;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.example-2 .icon-content a:hover {
+    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+
+.example-2 .icon-content a svg {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+}
+
+.example-2 .icon-content a:hover {
     color: white;
 }
 
-
-
-/* Home */
-#Home{
+.example-2 .icon-content a .filled {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    height: 95vh;
+    height: 0;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Navbar */
-
-.navbar{
-    margin-left: 300px;
+.example-2 .icon-content a:hover .filled {
+    height: 100%;
 }
 
-#navbarNav{
-    margin-left: 700px;
+.example-2 .icon-content a[data-social="linkedin"] .filled,
+.example-2 .icon-content a[data-social="linkedin"]~.tooltip {
+    background-color: #0274b3;
 }
 
-.nav-item{
-    margin-left: 15px;
+.example-2 .icon-content a[data-social="github"] .filled,
+.example-2 .icon-content a[data-social="github"]~.tooltip {
+    background-color: #24262a;
 }
 
-.navbar-brand{
-    margin-left: -50px;
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"]~.tooltip {
+    background: linear-gradient(45deg,
+            #405de6,
+            #5b51db,
+            #b33ab4,
+            #c135b4,
+            #e1306c,
+            #fd1f1f);
 }
 
-/* Description */
-.descriptionContainer{
-    margin-top: 100px;
-}
-.title{
-    margin-left: -90px;
-}
-.name1{
-    font-size: 80px;
-    margin-left: 10px;
-}
-.name2{
-    color: lightgreen;
-    font-size: 70px;
-    margin-left: 220px;
-}
-.description{
-    margin-left: 241px;
-    margin-right: 27px;
-}
-/* Sezione spam */
-.social{
-    margin-top: 40px;
-}
-.spam{
-    margin-left: 150px;
-}
-/* Sezione cv */
-.btn{
-    border-radius: 24px;
-    background-color: transparent;
-    color: lightgreen;
-    border-color: lightgreen;
+.example-2 .icon-content a[data-social="youtube"] .filled,
+.example-2 .icon-content a[data-social="youtube"]~.tooltip {
+    background-color: #ff0000;
 }
 
-/* Sezione social */
-.button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-left: -50px;
-  }
-  
-  .button {
-    cursor: pointer;
-    text-decoration: none;
-    color: #ffff;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #2d2e32;
-    border: 2px solid #2d2e32;
-    transition: all 0.45s;
-  }
-  
-  .button:hover {
-    transform: rotate(360deg);
-    transform-origin: center center;
-    background-color: #ffff;
-    color: #2d2e32;
-  }
-  
-  .button:hover .btn-svg {
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(305deg)
-      brightness(103%) contrast(103%);
-  }
-  
-  .flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+@media (min-width: 320px) {
+    /* Index */
 
-/* Sezione foto */
-
-
-.foto{
-    margin-top: -35px;
-    width: 50%;
-    border-radius: 250px;
-}
-
-/* Sezione details */
-
-.presentationDetail{
-    margin-top: 100px;
-    margin-left: 215px;
-}
-.number{
-    font-size: 48px;
-}
-.write{
-    margin-left: -40px;
-    margin-top: 8px;
-    width: 49px;
-}
-.detailsContainer{
-    flex-direction: row;
-}
-
-
-
-
-@media (max-width: 575.98px) {
-    .html{
-        overflow-x: hidden;
+    .logo {
+        margin-top: 10px;
+        margin-left: 25px !important;
     }
-    .body{
-        overflow-x: hidden;
-    }
-    /* Navbar */
-    .navbar{
-        margin-left: 20px;
+
+    .fotoIndex {
         width: 100%;
     }
-    #navbarNav.show {
+
+    .jobTitle {
+        margin-left: 80px;
+    }
+
+    .namePt1 {
+        margin-left: 0px;
+        font-size: 78px;
+    }
+
+    .namePt2 {
+        width: max-content;
+        margin-left: 8px;
+        font-size: 50px;
+    }
+
+    .description {
+        margin-left: 55px;
+        color: grey;
+    }
+
+    .cvButton {
+        margin-left: 130px;
+    }
+
+    .bruhScritta {
+        margin-left: 0px;
+        margin-top: 100px;
+    }
+
+    .mbareScritta {
+        margin-left: -80px;
+    }
+
+    ul {
+        list-style: none;
+        margin-left: 0px;
+    }
+
+    /* Services */
+
+    /* Product */
+
+    /* Projects */
+
+    /* Contacts */
+}
+@media (max-width: 425px) {
+
+    /* Index */
+
+    .logo {
+        margin-top: 10px;
+        margin-left: 35px;
+    }
+
+    .fotoIndex {
         width: 100%;
-        padding: 0;
-        margin: 0;
-        overflow: hidden;
-    
-    }
-    #navbarNav {
-        transition: all -1s ease-in-out;
     }
 
-    .navbar-brand{
-        font-size: 30px;
-    }
-    .navbar-toggler{
-        font-size: 25px;
-    }
-    
-    .nav-item{
-        margin-left: -290px;
+    .jobTitle {
+        margin-left: 80px;
     }
 
-    /* Description */
-
-    .rowDescription {
-        flex-direction: column-reverse;
-        margin-left: -190px;
+    .namePt1 {
+        margin-left: 40px;
+        font-size: 78px;
     }
-    .foto{
+
+    .namePt2 {
+        width: max-content;
+        margin-left: 8px;
+        font-size: 50px;
+    }
+
+    .description {
+        margin-left: 55px;
+        color: grey;
+    }
+
+    .cvButton {
+        margin-left: 130px;
+    }
+
+    .bruhScritta {
+        margin-left: 0px;
+        margin-top: 100px;
+    }
+
+    .mbareScritta {
+        margin-left: -80px;
+    }
+
+    ul {
+        list-style: none;
+        margin-left: 0px;
+    }
+
+    /* Services */
+
+    /* Product */
+
+    /* Projects */
+
+    /* Contacts */
+}
+
+@media (max-width: 768px) {
+    /* Index */
+
+    /* Services */
+
+    /* Product */
+
+    /* Projects */
+
+    /* Contacts */
+}
+
+@media (max-width: 1024px) {
+
+    /* Index */
+
+    /* Services */
+
+    /* Product */
+
+    /* Projects */
+
+    /* Contacts */
+
+}
+
+@media (min-width: 1100px) {
+    /* Index */
+
+    .logo {
+        margin-top: -50px;
+        margin-right: -90px;
+        margin-left: 100px;
+    }
+
+    .fotoIndex {
         width: 75%;
-        margin-left: 29.3%;
-    }
-    .title{
-        width: 100%;
-        margin-left: 90px;
-        margin-top: 50px;
-        font-size: 20px;
-    }
-    .name{
-        width: 100%;
-        margin-left: 85px;
-    }
-    .name2{
-        width: 180%;
-        margin-left: -39%;
-        font-size: 40px;
-    }
-    .description{
-        width: 70%;
-        margin-left: 170px;
     }
 
-    .btn{
-        width: 70%;
-        height: 130%;
-        margin-left: 30px;
+    .jobTitle {
+        margin-left: 0px;
     }
-    .button-container{
-        margin-top: 25px;
-        margin-left: 180px;
+
+    .namePt1 {
+        margin-left: 0px;
+        font-size: 78px;
     }
-    .detailsContainer{
-        flex-direction: column;
-        margin-left: -300px;
+
+    .namePt2 {
+        width: max-content;
+        margin-left: 0px;
+        font-size: 50px;
     }
-    .number{
-        font-size: 48px;
+
+    .description {
+        margin-left: 0px;
+        color: grey;
     }
-    .write{
-        font-size: 20px;
-        width: 50%;
-        margin-left: -85px;
+
+    .cvButton {
+        margin-left: 0px;
     }
+
+    .bruhScritta {
+        margin-left: -50px;
+        margin-top: 150px;
+    }
+
+
+    /* Services */
+
+    /* Product */
+
+    /* Projects */
+
+    /* Contacts */
 }
 
 /*
-
--- Navbar --
-.navbar{
-    margin-left: 0px;
-    width: 150%;
-}
-#navbarNav.show {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-
-}
-#navbarNav {
-    transition: all -1s ease-in-out;
-  }
-
-.navbar-brand{
-    font-size: 48px;
-}
-.navbar-toggler{
-    font-size: 35px;
-}
-
-.nav-item{
-    margin-left: -470px;
-}
-
--- Description --
-
-.rowDescription {
-    flex-direction: column-reverse;
-}
-.foto{
-    width: 80%;
-    margin-left: 120px;
-}
-.title{
-    width: 100%;
-    margin-left: 90px;
-    margin-top: 45px;
-    font-size: 25px;
-}
-.name{
-    width: 100%;
-    margin-left: 85px;
-}
-.name2{
-    width: 180%;
-    margin-left: -130px;
-    font-size: 57px;
-}
-.description{
-    width: 125%;
-    margin-left: 50px;
-}
-
-.btn{
-    width: 120%;
-    height: 130%;
-    margin-left: -15px;
-}
-.button-container{
-    margin-top: 25px;
-    margin-left: 180px;
-}
-.detailsContainer{
-    flex-direction: column;
-    margin-left: -180px;
-}
-.number{
-    font-size: 48px;
-}
-.write{
-    font-size: 20px;
-    width: 50%;
-    margin-left: -85px;
-}
-
+<div class="card-body p-0 d-flex justify-content-start logo">
+                                        <img src="TemporaryLogo.png"
+                                            class="fotoIndex rounded-circle border border-light border-opacity-0 border-dashed"
+                                            alt="">
+                                    </div>
 */
