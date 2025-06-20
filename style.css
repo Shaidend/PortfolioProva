@@ -145,7 +145,7 @@ ul {
 
     .jobTitle {
         width: max-content;
-        margin-left: 50px !important;
+        margin-left: 55px !important;
     }
 
     .namePt1 {
@@ -161,7 +161,7 @@ ul {
     }
 
     .description {
-        margin-left: 60px !important;
+        margin-left: 55px;
         color: grey;
     }
 
