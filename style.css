@@ -161,7 +161,7 @@ ul {
     }
 
     .description {
-        margin-left: 55px;
+        margin-left: 55px !important;
         color: grey;
     }
 
