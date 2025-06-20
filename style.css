@@ -145,7 +145,7 @@ ul {
 
     .jobTitle {
         width: max-content;
-        margin-left:50px;
+        margin-left: 50px !important;
     }
 
     .namePt1 {
@@ -166,7 +166,7 @@ ul {
     }
 
     .cvButton {
-        margin-left: 70px;
+        margin-left: 70px !important;
     }
 
     .bruhScritta {
