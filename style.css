@@ -170,16 +170,16 @@ ul {
     }
 
     .bruhScritta {
-        margin-left: -10px;
+        margin-left: 0px !important;
         margin-top: 100px;
     }
     .mbareScritta {
-        margin-left: -80px;
+        margin-left: -50px !important;
     }
 
     ul {
         list-style: none;
-        margin-left: 0px;
+        margin-left: 10px;
     }
 
     /* Services */
