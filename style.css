@@ -145,18 +145,18 @@ ul {
 
     .jobTitle {
         width: max-content;
-        margin-left: 52px !important;
+        margin-left: 32px !important;
     }
 
     .namePt1 {
         width: max-content;
-        margin-left: 32px !important;
+        margin-left: 12px !important;
         font-size: 70px !important;
     }
 
     .namePt2 {
         width: max-content;
-        margin-left: 3px !important;
+        margin-left: 15px !important;
         font-size: 35px !important;
     }
 
