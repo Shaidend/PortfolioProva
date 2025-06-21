@@ -131,7 +131,67 @@ ul {
     background-color: #ff0000;
 }
 
-@media (min-width: 320px) {
+@media (min-width: 320px){
+    /* Index */
+
+    .logo {
+        margin-top: 10px;
+        margin-left: 25px !important;
+    }
+
+    .fotoIndex {
+        width: 100%;
+    }
+
+    .jobTitle {
+        width: max-content;
+        margin-left: 52px !important;
+    }
+
+    .namePt1 {
+        width: max-content;
+        margin-left: 32px !important;
+        font-size: 70px !important;
+    }
+
+    .namePt2 {
+        width: max-content;
+        margin-left: 3px !important;
+        font-size: 45px !important;
+    }
+
+    .description {
+        margin-left: 53px !important;
+        color: grey;
+    }
+
+    .cvButton {
+        margin-left: 103px !important;
+    }
+
+    .bruhScritta {
+        margin-left: -10px;
+        margin-top: 100px;
+    }
+    .mbareScritta {
+        margin-left: -80px;
+    }
+
+    ul {
+        list-style: none;
+        margin-left: 0px;
+    }
+
+    /* Services */
+
+    /* Product */
+
+    /* Projects */
+
+    /* Contacts */
+}
+
+@media (min-width: 375px) {
     /* Index */
 
     .logo {
