@@ -264,7 +264,7 @@ ul {
 
     .logo {
         margin-top: 10px;
-        margin-left: 35px;
+        margin-left: 35px !important;
     }
 
     .fotoIndex {
@@ -272,17 +272,17 @@ ul {
     }
 
     .jobTitle {
-        margin-left: 80px;
+        margin-left: 80px !important;
     }
 
     .namePt1 {
-        margin-left: 40px;
+        margin-left: 40px !important;
         font-size: 48px;
     }
 
     .namePt2 {
         width: max-content;
-        margin-left: 8px;
+        margin-left: 8px !important;
         font-size: 50px;
     }
 
@@ -292,7 +292,7 @@ ul {
     }
 
     .cvButton {
-        margin-left: 130px;
+        margin-left: 130px !important;
     }
 
     .bruhScritta {
@@ -306,7 +306,7 @@ ul {
 
     ul {
         list-style: none;
-        margin-left: 0px;
+        margin-left: 10px !important;
     }
     
 
