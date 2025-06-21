@@ -132,7 +132,14 @@ ul {
 }
 
 @media (min-width: 320px){
+
+    .navbar-toggler{
+        margin-left: 10px;
+    }
+    
     /* Index */
+
+
 
     .logo {
         margin-top: 10px;
