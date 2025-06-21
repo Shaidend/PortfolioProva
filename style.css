@@ -134,7 +134,7 @@ ul {
 @media (min-width: 320px){
 
     .navbar-toggler{
-        margin-left: 150px !important;
+        margin-right: -50px !important;
     }
     
     /* Index */
