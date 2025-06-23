@@ -134,7 +134,7 @@ ul {
 @media (max-width: 320px){
 
     .navbar-toggler{
-        margin-right: -10px !important;
+        margin-right: -10px;
     }
     
     /* Index */
@@ -143,7 +143,7 @@ ul {
 
     .logo {
         margin-top: 10px;
-        margin-left: 25px !important;
+        margin-left: 25px;
     }
 
     .fotoIndex {
@@ -152,41 +152,41 @@ ul {
 
     .jobTitle {
         width: max-content;
-        margin-left: 27px !important;
+        margin-left: 27px;
     }
 
     .namePt1 {
         width: max-content;
-        margin-left: 5px !important;
-        font-size: 70px !important;
+        margin-left: 5px;
+        font-size: 70px;
     }
 
     .namePt2 {
         width: max-content;
-        margin-left: 14px !important;
-        font-size: 35px !important;
+        margin-left: 14px;
+        font-size: 35px;
     }
 
     .description {
-        margin-left: 53px !important;
+        margin-left: 53px;
         color: grey;
     }
 
     .cvButton {
-        margin-left: 75px !important;
+        margin-left: 75px;
     }
 
     .bruhScritta {
-        margin-left: 0px !important;
+        margin-left: 0px;
         margin-top: 100px;
     }
     .mbareScritta {
-        margin-left: -50px !important;
+        margin-left: -50px;
     }
 
     ul {
         list-style: none;
-        margin-left: -10px !important;
+        margin-left: -10px;
     }
 
     /* Services */
