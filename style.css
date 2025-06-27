@@ -23,11 +23,9 @@
     backdrop-filter: blur(15px);
 }
 
-
 /* Bottoni spam */
 ul {
     list-style: none;
-    margin-left: -200px;
 }
 
 .example-2 {
@@ -131,239 +129,36 @@ ul {
     background-color: #ff0000;
 }
 
-@media (max-width: 320px){
-
-    .navbar-toggler{
-        margin-right: -10px;
-    }
-    
-    /* Index */
-
-
-
-    .logo {
-        margin-top: 10px;
-        margin-left: 25px;
-    }
-
-    .fotoIndex {
-        width: 100%;
-    }
-
-    .jobTitle {
-        width: max-content;
-        margin-left: 27px;
-    }
-
-    .namePt1 {
-        width: max-content;
-        margin-left: 5px;
-        font-size: 70px;
-    }
-
-    .namePt2 {
-        width: max-content;
-        margin-left: 14px;
-        font-size: 35px;
-    }
-
-    .description {
-        margin-left: 53px;
-        color: grey;
-    }
-
-    .cvButton {
-        margin-left: 75px;
-    }
-
-    .bruhScritta {
-        margin-left: 0px;
-        margin-top: 100px;
-    }
-    .mbareScritta {
-        margin-left: -50px;
-    }
-
-    ul {
-        list-style: none;
-        margin-left: -10px;
-    }
-
-    /* Services */
-
-    /* Product */
-
-    /* Projects */
-
-    /* Contacts */
+.cvButton {
+    color: lightgreen;
+    border-color: lightgreen;
+    background-color: transparent;
 }
 
-@media (max-width: 375px) {
-    /* Index */
-
-    .logo {
-        margin-top: 10px;
-        margin-left: 25px !important;
-    }
-
-    .fotoIndex {
-        width: 100%;
-    }
-
-    .jobTitle {
-        width: max-content;
-        margin-left: 52px !important;
-    }
-
-    .namePt1 {
-        width: max-content;
-        margin-left: 32px !important;
-        font-size: 70px !important;
-    }
-
-    .namePt2 {
-        width: max-content;
-        margin-left: 3px !important;
-        font-size: 45px !important;
-    }
-
-    .description {
-        margin-left: 53px !important;
-        color: grey;
-    }
-
-    .cvButton {
-        margin-left: 103px !important;
-    }
-
-    .bruhScritta {
-        margin-left: -10px;
-        margin-top: 100px;
-    }
-    .mbareScritta {
-        margin-left: -80px;
-    }
-
-    ul {
-        list-style: none;
-        margin-left: 0px;
-    }
-
-    /* Services */
-
-    /* Product */
-
-    /* Projects */
-
-    /* Contacts */
+.cvButton:hover {
+    color: white;
+    border-color: lightgreen;
+    background-color: lightgreen;
 }
 
-@media (max-width: 425px) {
+@media (min-width: 320px) {
 
     /* Index */
 
-    .logo {
-        margin-top: 10px;
-        margin-left: 39px !important;
-    }
-
-    .fotoIndex {
-        width: 100%;
-    }
-
-    .jobTitle {
-        margin-left: 77px !important;
+    .navbar-brand {
+        margin-left: -20px !important;
     }
 
     .namePt1 {
-        margin-left: 57px !important;
-        font-size: 48px;
-    }
-
-    .namePt2 {
         width: max-content;
-        margin-left: 8px !important;
-        font-size: 50px !important;
-    }
-
-    .description {
-        margin-left: 55px;
-        color: grey;
-    }
-
-    .cvButton {
-        margin-left: 130px !important;
-    }
-
-    .bruhScritta {
-        margin-left: 0px;
-        margin-top: 100px;
-    }
-
-    .mbareScritta {
-        margin-left: -80px;
-    }
-
-    ul {
-        list-style: none;
-        margin-left: 3px !important;
-    }
-    
-
-    /* Services */
-
-    /* Product */
-
-    /* Projects */
-
-    /* Contacts */
-}
-
-@media (max-width: 768px) {
-    /* Index */
-
-    .logo {
-        margin-top: 70px;
-        margin-left: 225px;
-    }
-
-    .fotoIndex {
-        width: 75%;
-    }
-
-
-    .namePt1 {
-        margin-left: 272px;
-        font-size: 48px;
-    }
-
-    .namePt2 {
-        width: max-content;
-        margin-left: 180px;
         font-size: 50px;
+        margin-left: 43px !important;
     }
 
-    .description {
-        margin-left: 205px;
-        color: grey;
-    }
-
-    .cvButton {
-        margin-left: 130px;
-    }
-
-    .bruhScritta {
-        margin-left: 0px;
-        margin-top: 100px;
-    }
-
-    .mbareScritta {
-        margin-left: -80px;
-    }
-
-    ul {
-        list-style: none;
-        margin-left: 3px;
+    .namePt2 {
+        width: max-content;
+        font-size: 39px;
+        margin-left: -5px !important;
     }
 
     /* Services */
@@ -375,9 +170,160 @@ ul {
     /* Contacts */
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 375px) {
+    /* Index */
+
+    .navbar-brand {
+        margin-left: -20px !important;
+    }
+
+    .namePt1 {
+        width: max-content;
+        font-size: 50px;
+        margin-left: 70px !important;
+    }
+
+    .namePt2 {
+        width: max-content;
+        font-size: 45px;
+        margin-left: 5px !important;
+    }
+
+    /* Services */
+
+    /* Product */
+
+    /* Projects */
+
+    /* Contacts */
+}
+
+@media (min-width: 425px) {
 
     /* Index */
+
+    .navbar-brand {
+        margin-left: -20px !important;
+    }
+
+    .namePt1 {
+        width: max-content;
+        font-size: 50px;
+        margin-left: 90px !important;
+    }
+
+    .namePt2 {
+        width: max-content;
+        font-size: 50px;
+        margin-left: 5px !important;
+    }
+
+
+    /* Services */
+
+    /* Product */
+
+    /* Projects */
+
+    /* Contacts */
+}
+
+@media (min-width: 768px) {
+    /* Index */
+
+    .navbar-brand {
+        margin-left: -20px !important;
+    }
+
+    .fotoIndex {
+        width: 50% !important;
+    }
+
+
+    .jobTitle {
+        margin-left: 90px !important;
+    }
+
+    .namePt1 {
+        width: max-content;
+        font-size: 70px;
+        margin-left: 210px !important;
+    }
+
+    .namePt2 {
+        width: max-content;
+        font-size: 70px;
+        margin-left: 100px !important;
+    }
+
+    .description {
+        margin-left: 30px !important;
+    }
+
+    .bruhScritta {
+        width: 100%;
+    }
+
+    /* Services */
+
+    /* Product */
+
+    /* Projects */
+
+    /* Contacts */
+}
+
+@media (min-width: 1024px) {
+
+    /* Index */
+
+    body {
+        margin-left: -50px !important;
+    }
+
+    .navbar-brand {
+        margin-left: -20px !important;
+    }
+
+    .navbar-nav {
+        margin-left: 150px !important;
+    }
+
+    .fotoIndex {
+        width: 100% !important;
+        margin-left: 90px !important;
+    }
+
+
+    .jobTitle {
+        margin-left: 45px !important;
+    }
+
+    .namePt1 {
+        width: max-content;
+        font-size: 70px;
+        margin-left: 40px !important;
+    }
+
+    .namePt2 {
+        width: max-content;
+        font-size: 70px;
+        margin-left: 40px !important;
+    }
+
+    .description {
+        margin-left: 43px !important;
+    }
+
+    .cvButton {
+        margin-left: -12px !important;
+    }
+
+    .bruhScritta {
+        width: 150%;
+        display: flex;
+        margin-left: -67px !important;
+    }
 
     /* Services */
 
@@ -392,44 +338,108 @@ ul {
 @media (min-width: 1100px) {
     /* Index */
 
-    .logo {
-        margin-top: -50px;
-        margin-right: -90px;
-        margin-left: 100px;
+    body {
+        margin-left: -20px !important;
+    }
+
+    .navbar {
+        margin-left: -100px !important;
+    }
+
+    .navbar-nav {
+        margin-left: 550px !important;
+    }
+
+    .nav-link {
+        font-size: 20px !important;
+    }
+
+    .navbar-brand {
+        font-size: 25px !important;
+        margin-left: 30px !important;
     }
 
     .fotoIndex {
-        width: 75%;
+        width: 85% !important;
+        margin-left: -80px !important;
+        margin-top: 40px !important;
     }
 
+    .zium {
+        margin-top: 140px !important;
+        margin-left: -20px !important;
+    }
+
+
     .jobTitle {
-        margin-left: 0px;
+        margin-left: 140px !important;
     }
 
     .namePt1 {
-        margin-left: 0px;
-        font-size: 78px;
+        width: max-content;
+        font-size: 70px;
+        margin-left: 135px !important;
     }
 
     .namePt2 {
         width: max-content;
-        margin-left: 0px;
-        font-size: 50px;
+        font-size: 70px;
+        margin-left: 134px !important;
     }
 
     .description {
-        margin-left: 0px;
-        color: grey;
+        font-size: 20px;
+        margin-left: 139px !important;
     }
 
     .cvButton {
-        margin-left: 0px;
+        font-size: 25px;
+        margin-left: 83px !important;
+    }
+
+    .example-2 .icon-content a {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 59px;
+        height: 59px;
+        border-radius: 50%;
+        color: #4d4d4d;
+        background-color: #fff;
+        transition: all 0.3s ease-in-out;
     }
 
     .bruhScritta {
-        margin-left: -50px;
-        margin-top: 150px;
+        width: 150% !important;
+        margin-top: 100px !important;
+        margin-left: 7px !important;
     }
+
+    .mbare {
+        font-size: 20px !important;
+        margin-top: 20px !important;
+    }
+
+    .num {
+        font-size: 50px !important;
+        margin-left: 0px !important;
+    }
+
+    .num1 {
+        font-size: 50px !important;
+        margin-right: 110px !important;
+    }
+
+    .write {
+        font-size: 25px;
+        margin-right: 120px !important;
+    }
+
+
+
+
 
 
     /* Services */

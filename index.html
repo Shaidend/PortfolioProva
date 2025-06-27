@@ -11,6 +11,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
   <style>
@@ -20,10 +21,10 @@
   <script>
     function animateNumbers() {
       const counters = [
-        { element: document.querySelector('.counter-12'), target: 12, duration: 2000 },
-        { element: document.querySelector('.counter-26'), target: 26, duration: 2500 },
+        { element: document.querySelector('.counter-3'), target: 3, duration: 1500 },
+        { element: document.querySelector('.counter-13'), target: 13, duration: 2000 },
         { element: document.querySelector('.counter-8'), target: 8, duration: 1500 },
-        { element: document.querySelector('.counter-500'), target: 500, duration: 3000 }
+        { element: document.querySelector('.counter-80'), target: 80, duration: 2500 }
       ];
 
       counters.forEach(counter => {
@@ -44,6 +45,17 @@
     // Avvia l'animazione quando la pagina è caricata
     window.addEventListener('load', animateNumbers);
   </script>
+
+  <script>
+    function scaricaPDF() {
+      const link = document.createElement('a');
+      link.href = 'CV-Capezzuto-David.pdf';
+      link.download = 'CV-Capezzuto-David.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
 </head>
 
 <body class="body-custom">
@@ -55,13 +67,27 @@
         <div class="col-xl-8 col-lg-10">
           <nav class="navbar navbar-expand-lg navbar-glass rounded-bottom-4">
             <div class="container-fluid justify-content-between">
-              <a class="navbar-brand text-white mb-1" href="#">Name</a>
-              <div class="navbar-nav">
-                <a class="nav-link mx-4" href="#" style="color: lightgreen;">Home</a>
-                <a class="nav-link text-white mx-4" href="#">Services</a>
-                <a class="nav-link text-white mx-4" href="#">Resume</a>
-                <a class="nav-link text-white mx-4" href="#">Projects</a>
-                <a class="nav-link text-white mx-4" href="#">Contacts</a>
+              <a class="navbar-brand text-white mb-1 fs-5 fs-xl-1 me-xl-5" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="120" height="40">
+                  <defs>
+                    <style>
+                      .script-text {
+                        font-family: 'Parisienne', cursive;
+                        font-size: 32px;
+                        fill: white;
+                        font-weight: normal;
+                      }
+                    </style>
+                  </defs>
+                  <text x="60" y="28" text-anchor="middle" class="script-text">David</text>
+                </svg>
+              </a>
+              <div class="navbar-nav ms-lg-5">
+                <a class="nav-link mx-4 fs-5" href="#" style="color: lightgreen;">Home</a>
+                <a class="nav-link text-white mx-4 fs-5 fs-xl-1" href="#">Services</a>
+                <a class="nav-link text-white mx-4 fs-5 fs-xl-1" href="#">Resume</a>
+                <a class="nav-link text-white mx-4 fs-5 fs-xl-1" href="#">Projects</a>
+                <a class="nav-link text-white mx-4 fs-5 fs-xl-1" href="#">Contacts</a>
               </div>
             </div>
           </nav>
@@ -73,7 +99,21 @@
     <div class="d-block d-lg-none">
       <nav class="navbar navbar-glass">
         <div class="container-fluid">
-          <a class="navbar-brand text-white" href="#">Navbar</a>
+          <a class="navbar-brand text-white" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="120" height="40">
+              <defs>
+                <style>
+                  .script-text {
+                    font-family: 'Parisienne', cursive;
+                    font-size: 32px;
+                    fill: white;
+                    font-weight: normal;
+                  }
+                </style>
+              </defs>
+              <text x="60" y="28" text-anchor="middle" class="script-text">David</text>
+            </svg>
+          </a>
           <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <i class="bi bi-list text-white fs-4"></i>
@@ -103,17 +143,17 @@
             </li>
             <li class="nav-item">
               <a class="nav-link text-white py-3 border-bottom border-light border-opacity-25" href="#">
-                <i class="bi bi-box me-2"></i>Product
+                <i class="bi bi-box me-2"></i>Resume
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white py-3 border-bottom border-light border-opacity-25" href="#">
+                <i class="bi bi-briefcase me-2"></i>Projects
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white py-3" href="#">
-                <i class="bi bi-info-circle me-2"></i>Projects
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white py-3" href="#">
-                <i class="bi bi-info-circle me-2"></i>Contacts
+                <i class="bi bi-envelope me-2"></i>Contacts
               </a>
             </li>
           </ul>
@@ -125,31 +165,38 @@
     <div class="flex-grow-1 d-flex align-items-center justify-content-center mb-5">
       <div class="container-fluid">
         <div class="row justify-content-center">
-          <div class="col-xl-8 col-lg-10">
+          <div class="col-xl-10 col-lg-11"> <!-- Aumentato da col-xl-8 col-lg-10 -->
             <div class="row g-3">
               <!-- Prima card -->
               <div class="col-lg-6 col-md-10 col-11 order-2 order-lg-1">
                 <div class="card bg-transparent border-0">
-                  <div class="card-body p-0 text-center">
-                    <h5 class="card-title text-white mb-3 jobTitle">Software & Web Developer</h5>
-                    <h1 class="text-white namePt1">Hello I'm</h1>
-                    <h1 class="namePt2" style="color: lightgreen;">David Capezzuto</h1>
-                    <p class="description" style="color: grey;">
+                  <div class="card-body p-0 text-center text-lg-start zium">
+                    <h5 class="card-title jobTitle text-white mb-3 ms-4 ms-sm-0 ms-md-5 ms-lg-0">
+                      Software & Web Developer</h5>
+                    <h1 class="text-white namePt1 ms-4 ms-md-5 ms-lg-0">Hello I'm</h1>
+                    <!-- Aggiunto ms-lg-0 -->
+                    <h1 class="namePt2 ms-md-5 ms-lg-0" style="color: lightgreen; ">David Capezzuto
+                    </h1> <!-- Aggiunto ms-lg-0 -->
+                    <p class="description ms-md-5 ms-lg-0" style="color: grey; width: 110%;">
                       I am proficient in various programming languages and technologies
                     </p>
 
-                    <!-- STRUTTURA MODIFICATA: uso row per permettere il wrapping -->
-                    <div class="row mt-4 g-3 align-items-center">
-                      <!-- Bottone: occupa tutta la larghezza su mobile, parte su desktop -->
-                      <div class="col-12 col-lg-5">
-                        <button class="cvButton btn btn-outline-light px-4 rounded-5">
+                    <!-- STRUTTURA MODIFICATA per tablet -->
+                    <div class="row mt-4 g-3 align-items-center ms-md-5">
+                      <!-- Bottone: layout modificato per tablet -->
+                      <div class="col-12 col-md-5 col-lg-5">
+                        <button onclick="scaricaPDF()"
+                          class="cvButton btn btn-outline-light px-4 rounded-5 mb-3 mb-md-5 ms-4 ms-md-5 ms-lg-0">
                           Download CV
                         </button>
                       </div>
-                      <!-- Social: occupa tutta la larghezza su mobile, resto su desktop -->
-                      <div class="col-12 col-lg-7">
-                        <ul class="example-2 mb-0">
-                          <li class="icon-content">
+                      <!-- Social: layout modificato per tablet -->
+                      <div
+                        class="col-12 col-md-7 col-lg-7 d-flex justify-content-center justify-content-md-start justify-content-lg-start mb-5 ">
+                        <ul class="example-2 mb-0 p-0 ms-4 ms-md-0 ms-lg-0">
+                          <!-- Aggiunto ms-md-0 ms-lg-0 -->
+                          <!-- resto del contenuto social invariato -->
+                          <li class="icon-content trumuun">
                             <a href="https://linkedin.com/" aria-label="LinkedIn" data-social="linkedin">
                               <div class="filled"></div>
                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -161,7 +208,7 @@
                             </a>
                             <div class="tooltip">LinkedIn</div>
                           </li>
-                          <li class="icon-content">
+                          <li class="icon-content ">
                             <a href="https://www.github.com/" aria-label="GitHub" data-social="github">
                               <div class="filled"></div>
                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -173,7 +220,7 @@
                             </a>
                             <div class="tooltip">GitHub</div>
                           </li>
-                          <li class="icon-content">
+                          <li class="icon-content ">
                             <a href="https://www.instagram.com/" aria-label="Instagram" data-social="instagram">
                               <div class="filled"></div>
                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -185,7 +232,7 @@
                             </a>
                             <div class="tooltip">Instagram</div>
                           </li>
-                          <li class="icon-content">
+                          <li class="icon-content ">
                             <a href="https://youtube.com/" aria-label="Youtube" data-social="youtube">
                               <div class="filled"></div>
                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -203,40 +250,46 @@
                   </div>
                 </div>
               </div>
-              <!-- Seconda card -->
+              <!-- Seconda card invariata -->
               <div class="col-lg-6 col-md-10 col-11 order-1 order-lg-2">
-                <div class="card bg-transparent border-0">
-                  <div class="card-body p-0 d-flex justify-content-start logo">
+                <div class="card bg-transparent border-0 ms-md-5">
+                  <div class="card-body p-0 d-flex justify-content-md-center logo ms-md-5">
                     <img src="TemporaryLogo.png"
-                      class="fotoIndex rounded-circle border border-light border-opacity-0 border-dashed" alt="">
+                      class="fotoIndex w-100 w-md-25 w-lg-25 rounded-circle border border-light border-opacity-0 border-dashed ms-3"
+                      alt="">
                   </div>
                 </div>
               </div>
             </div>
-            <div class="container-fluid bruhScritta">
-              <div class="row text-center g-4">
-                <div class="col-lg-3 col-md-6 col-sm-12 me-0">
-                  <div class="d-flex align-items-center justify-content-center me-5">
-                    <h1 class="text-white display-5 fw-bold mb-0 me-4 counter-12">12</h1>
-                    <p class="text-white mb-0">Years of<br>experience</p>
+
+            <!-- Sezione statistiche modificata per non andare a capo -->
+            <div class="container-fluid bruhScritta mt-5">
+              <div class="row text-center g-2 justify-content-center ms-md-5 me-lg-5">
+                <!-- Cambiato g-4 in g-2 e aggiunto justify-content-center -->
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12"> <!-- Aggiunto col-xl-3 -->
+                  <div class="d-flex align-items-center justify-content-center mbare">
+                    <h1 class="text-white display-5 fw-bold mb-0 me-3 counter-3 num">3</h1>
+                    <!-- Ridotto margin da me-4 a me-3 -->
+                    <p class="text-white mb-0 small me-5 me-lg-5 write">Years of<br>experience</p>
+                    <!-- Aggiunto small per ridurre font -->
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                  <div class="d-flex align-items-center justify-content-center me-5">
-                    <h1 class="text-white display-5 fw-bold mb-0 me-4 counter-26">26</h1>
-                    <p class="text-white mb-0">Projects<br>completed</p>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12"> <!-- Aggiunto col-xl-3 -->
+                  <div class="d-flex align-items-center justify-content-center ms-lg-5 me-lg-5 mbare">
+                    <h1 class="text-white display-5 fw-bold mb-0 me-3 counter-13 num">13</h1>
+                    <p class="text-white mb-0 small me-5 me-lg-5 write">Projects<br>completed</p>
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                  <div class="d-flex align-items-center justify-content-center me-5">
-                    <h1 class="text-white display-5 fw-bold mb-0 me-4 counter-8">8</h1>
-                    <p class="text-white mb-0">Technologies<br>mastered</p>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12"> <!-- Aggiunto col-xl-3 -->
+                  <div class="d-flex align-items-center justify-content-center ms-lg-5 me-lg-5 mbare">
+                    <h1 class="text-white display-5 fw-bold mb-0 me-3 counter-8 num">8</h1>
+                    <p class="text-white mb-0 small me-5 me-lg-5 write">Technologies<br>mastered</p>
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                  <div class="mbareScritta d-flex align-items-center justify-content-center">
-                    <h1 class="text-white display-5 fw-bold mb-0 me-4 counter-500">500</h1>
-                    <p class="text-white mb-0">Code<br>commits</p>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12"> <!-- Aggiunto col-xl-3 -->
+                  <div class="d-flex align-items-center justify-content-center ms-lg-5 me-lg-5 mbare">
+                    <h1 class="text-white display-5 fw-bold mb-0 me-3 counter-80 num">80</h1>
+                    <p class="text-white mb-0 small me-5 me-lg-5 write">Code<br>commits</p>
                   </div>
                 </div>
               </div>
@@ -246,7 +299,6 @@
       </div>
     </div>
   </div>
-
 
 </body>
 
