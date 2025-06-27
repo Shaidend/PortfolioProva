@@ -103,9 +103,9 @@ ul {
     height: 100%;
 }
 
-.example-2 .icon-content a[data-social="linkedin"] .filled,
-.example-2 .icon-content a[data-social="linkedin"]~.tooltip {
-    background-color: #0274b3;
+.example-2 .icon-content a[data-social="discord"] .filled,
+.example-2 .icon-content a[data-social="discord"]~.tooltip {
+    background-color: #7289da;
 }
 
 .example-2 .icon-content a[data-social="github"] .filled,
