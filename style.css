@@ -141,12 +141,39 @@ ul {
     background-color: lightgreen;
 }
 
+/* services */
+
+.arrow-btn svg {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center;
+}
+
+.arrow-btn:hover svg {
+    transform: rotate(-45deg);
+}
+
+.soso {
+    background-color: white;
+}
+
+.soso:hover {
+    background-color: lightgreen;
+}
+
+
+/* Product */
+
+/* Projects */
+
+/* Contacts */
+
+
 @media (min-width: 320px) {
 
     /* Index */
 
     .navbar-brand {
-        margin-left: -20px !important;
+        margin-left: -25px !important;
     }
 
     .namePt1 {
@@ -162,6 +189,79 @@ ul {
     }
 
     /* Services */
+
+    .card-1{
+        width: 19rem; 
+        height: 16.5rem; 
+        margin-left: -25px;
+        border: 1px solid grey;
+    }
+    .card-1:hover{
+        width: 19rem; 
+        height: 16rem;
+        margin-left: -25px;
+        border: 1px solid white;
+    }
+    .card-2{
+        width: 19rem; 
+        height: 16rem;
+        margin-left: -25px;
+        border: 1px solid grey;
+    }
+    .card-2:hover{
+        width: 19rem; 
+        height: 16rem;
+        margin-left: -25px;
+        border: 1px solid white;
+    }
+    .card-3{
+        width: 19rem; 
+        height: 16rem; 
+        margin-left: -18px;
+        border: 1px solid grey;
+    }
+    .card-3:hover{
+        width: 19rem; 
+        height: 16rem; 
+        margin-left: -18px;
+        border: 1px solid white;
+    }
+    .card-4{
+        width: 19rem; 
+        height: 16rem; 
+        margin-left: -18px;
+        border: 1px solid grey;
+    }
+    .card-4:hover{
+        width: 19rem; 
+        height: 16rem; 
+        margin-left: -18px;
+        border: 1px solid white;
+    }
+
+    .navbar-toggler{
+        margin-left: 268px !important;
+        margin-top: -50px !important;
+    }
+
+    .soso{
+        width: 60px; 
+        height: 60px; 
+        top: 0.5rem; 
+        right:1rem;
+    }
+
+    .card-text{
+
+    }
+
+    .job{
+        width: 70% !important;
+    }
+
+    .n-job{
+        margin-top: 15px !important;
+    }
 
     /* Product */
 
@@ -190,6 +290,79 @@ ul {
     }
 
     /* Services */
+
+    .card-1{
+        width: 22rem; 
+        height: 16rem; 
+        margin-left: -25px;
+        border: 1px solid grey;
+    }
+    .card-1:hover{
+        width: 22rem; 
+        height: 16rem; 
+        margin-left: -25px;
+        border: 1px solid white;
+    }
+    .card-2{
+        width: 22rem; 
+        height: 16rem;
+        margin-left: -25px;
+        border: 1px solid grey;
+    }
+    .card-2:hover{
+        width: 22rem; 
+        height: 16rem; 
+        margin-left: -25px;
+        border: 1px solid white;
+    }
+    .card-3{
+        width: 22rem; 
+        height: 16rem; 
+        margin-left: -18px;
+        border: 1px solid grey;
+    }
+    .card-3:hover{
+        width: 22rem; 
+        height: 16rem; 
+        margin-left: -18px;
+        border: 1px solid white;
+    }
+    .card-4{
+        width: 22rem; 
+        height: 16rem; 
+        margin-left: -18px;
+        border: 1px solid grey;
+    }
+    .card-4:hover{
+        width: 22rem; 
+        height: 16rem; 
+        margin-left: -18px;
+        border: 1px solid white;
+    }
+
+    .navbar-toggler{
+        margin-left: 320px !important;
+        margin-top: -50px !important;
+    }
+
+    .soso{
+        width: 60px; 
+        height: 60px; 
+        top: 0.5rem; 
+        right:1rem;
+    }
+
+    .card-text{
+
+    }
+
+    .job{
+        width: 90% !important;
+    }
+
+    .n-job{
+        margin-top: 15px !important;
+    }
 
     /* Product */
 
@@ -220,6 +393,79 @@ ul {
 
 
     /* Services */
+
+    .card-1{
+        width: 24.8rem; 
+        height: 16rem; 
+        margin-left: -25px;
+        border: 1px solid grey;
+    }
+    .card-1:hover{
+        width: 24.8rem; 
+        height: 16rem; 
+        margin-left: -25px;
+        border: 1px solid white;
+    }
+    .card-2{
+        width: 24.8rem; 
+        height: 16rem;
+        margin-left: -25px;
+        border: 1px solid grey;
+    }
+    .card-2:hover{
+        width: 24.8rem; 
+        height: 16rem; 
+        margin-left: -25px;
+        border: 1px solid white;
+    }
+    .card-3{
+        width: 24.8rem; 
+        height: 16rem; 
+        margin-left: -18px;
+        border: 1px solid grey;
+    }
+    .card-3:hover{
+        width: 24.8rem; 
+        height: 16rem; 
+        margin-left: -18px;
+        border: 1px solid white;
+    }
+    .card-4{
+        width: 24.8rem; 
+        height: 16rem; 
+        margin-left: -18px;
+        border: 2px solid grey;
+    }
+    .card-4:hover{
+        width: 24.8rem; 
+        height: 16rem; 
+        margin-left: -18px;
+        border: 2px solid white;
+    }
+
+    .navbar-toggler{
+        margin-left: 365px !important;
+        margin-top: -50px !important;
+    }
+
+    .soso{
+        width: 60px; 
+        height: 60px; 
+        top: 0.7rem; 
+        right:1rem;
+    }
+
+    .card-text{
+
+    }
+
+    .job{
+        width: 90% !important;
+    }
+
+    .n-job{
+        margin-top: 15px !important;
+    }
 
     /* Product */
 
@@ -265,6 +511,79 @@ ul {
     }
 
     /* Services */
+
+    .card-1{
+        width: 40.4rem; 
+        height: 16rem; 
+        margin-left: -25px;
+        border: 1px solid grey;
+    }
+    .card-1:hover{
+        width: 40.4rem; 
+        height: 16rem; 
+        margin-left: -25px;
+        border: 1px solid white;
+    }
+    .card-2{
+        width: 40.4rem;
+        height: 16rem;
+        margin-left: -25px;
+        border: 1px solid grey;
+    }
+    .card-2:hover{
+        width: 40.4rem;
+        height: 16rem;
+        margin-left: -25px;
+        border: 1px solid white;
+    }
+    .card-3{
+        width: 40.4rem; 
+        height: 16rem; 
+        margin-left: -18px;
+        border: 1px solid grey;
+    }
+    .card-3:hover{
+        width: 40.4rem; 
+        height: 16rem; 
+        margin-left: -18px;
+        border: 1px solid white;
+    }
+    .card-4{
+        width: 40.4rem; 
+        height: 16rem; 
+        margin-left: -18px;
+        border: 1px solid grey;
+    }
+    .card-4:hover{
+        width: 40.4rem; 
+        height: 16rem; 
+        margin-left: -18px;
+        border: 1px solid white;
+    }
+
+    .navbar-toggler{
+        margin-left: 365px !important;
+        margin-top: 0px !important;
+    }
+
+    .soso{
+        width: 60px; 
+        height: 60px; 
+        top: 0.9rem; 
+        right:1rem;
+    }
+
+    .card-text{
+
+    }
+
+    .job{
+        width: 90% !important;
+    }
+
+    .n-job{
+        margin-top: 15px !important;
+    }
 
     /* Product */
 
@@ -326,6 +645,79 @@ ul {
     }
 
     /* Services */
+
+    .card-1{
+        width: 27rem; 
+        height: 16rem; 
+        margin-left: 40px;
+        border: 1px solid grey;
+    }
+    .card-1:hover{
+        width: 27rem; 
+        height: 16rem; 
+        margin-left: 40px;
+        border: 1px solid white;
+    }
+    .card-2{
+        width: 27rem; 
+        height: 16rem;
+        margin-left: 55px;
+        border: 1px solid grey;
+    }
+    .card-2:hover{
+        width: 27rem; 
+        height: 16rem;
+        margin-left: 55px;
+        border: 1px solid white;
+    }
+    .card-3{
+        width: 27rem; 
+        height: 16rem; 
+        margin-left: 47px;
+        border: 1px solid grey;
+    }
+    .card-3:hover{
+        width: 27rem; 
+        height: 16rem; 
+        margin-left: 47px;
+        border: 1px solid white;
+    }
+    .card-4{
+        width: 27rem; 
+        height: 16rem; 
+        margin-left: 55px;
+        border: 1px solid grey;
+    }
+    .card-4:hover{
+        width: 27rem; 
+        height: 16rem; 
+        margin-left: 55px;
+        border: 1px solid white;
+    }
+
+    .navbar-toggler{
+        margin-left: 365px !important;
+        margin-top: 0px !important;
+    }
+
+    .soso{
+        width: 60px; 
+        height: 60px; 
+        top: 0.8rem; 
+        right:1rem;
+    }
+
+    .card-text{
+
+    }
+
+    .job{
+        width: 90% !important;
+    }
+
+    .n-job{
+        margin-top: 15px !important;
+    }
 
     /* Product */
 
@@ -443,6 +835,84 @@ ul {
 
 
     /* Services */
+
+    .card-1{
+        width: 40rem; 
+        height: 16rem; 
+        margin-left: 105px;
+        border: 1px solid grey;
+    }
+    .card-1:hover{
+        width: 40rem; 
+        height: 16rem; 
+        margin-left: 105px;
+        border: 1px solid white;
+    }
+    .card-2{
+        width: 40rem; 
+        height: 16rem;
+        margin-left: 18px;
+        border: 1px solid grey;
+    }
+    .card-2:hover{
+        width: 40rem; 
+        height: 16rem;
+        margin-left: 18px;
+        border: 1px solid white;
+    }
+    .card-3{
+        width: 40rem; 
+        height: 16rem; 
+        margin-left: 112px;
+        border: 1px solid grey;
+    }
+    .card-3:hover{
+        width: 40rem; 
+        height: 16rem; 
+        margin-left: 112px;
+        border: 1px solid white;
+    }
+    .card-4{
+        width: 40rem; 
+        height: 16rem; 
+        margin-left: 18px;
+        border: 1px solid grey;
+    }
+    .card-4:hover{
+        width: 40rem; 
+        height: 16rem; 
+        margin-left: 18px;
+        border: 1px solid white;
+    }
+
+    .navbar-toggler{
+        margin-left: 365px !important;
+        margin-top: 0px !important;
+    }
+
+    .soso{
+        width: 60px; 
+        height: 60px; 
+        top: 0.9rem; 
+        right:1rem;
+    }
+
+    .card-text{
+
+    }
+
+    .job{
+        width: 90% !important;
+    }
+
+    .n-job{
+        margin-top: 15px !important;
+    }
+
+
+
+
+
 
     /* Product */
 
