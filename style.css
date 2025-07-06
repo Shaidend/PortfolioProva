@@ -1,7 +1,7 @@
 .body-custom {
     background-color: #1e1e1e;
-    min-height: 100vh;
-    overflow-x: hidden;
+    max-height: 100vh;
+    overflow-x: hidden !important;
 }
 
 /* Glassmorphism per navbar */
@@ -190,76 +190,81 @@ ul {
 
     /* Services */
 
-    .card-1{
-        width: 19rem; 
-        height: 16.5rem; 
+    .card-1 {
+        width: 19rem;
+        height: 16.5rem;
         margin-left: -25px;
         border: 1px solid grey;
     }
-    .card-1:hover{
-        width: 19rem; 
+
+    .card-1:hover {
+        width: 19rem;
         height: 16rem;
         margin-left: -25px;
         border: 1px solid white;
     }
-    .card-2{
-        width: 19rem; 
+
+    .card-2 {
+        width: 19rem;
         height: 16rem;
         margin-left: -25px;
         border: 1px solid grey;
     }
-    .card-2:hover{
-        width: 19rem; 
+
+    .card-2:hover {
+        width: 19rem;
         height: 16rem;
         margin-left: -25px;
         border: 1px solid white;
     }
-    .card-3{
-        width: 19rem; 
-        height: 16rem; 
+
+    .card-3 {
+        width: 19rem;
+        height: 16rem;
         margin-left: -18px;
         border: 1px solid grey;
     }
-    .card-3:hover{
-        width: 19rem; 
-        height: 16rem; 
-        margin-left: -18px;
-        border: 1px solid white;
-    }
-    .card-4{
-        width: 19rem; 
-        height: 16rem; 
-        margin-left: -18px;
-        border: 1px solid grey;
-    }
-    .card-4:hover{
-        width: 19rem; 
-        height: 16rem; 
+
+    .card-3:hover {
+        width: 19rem;
+        height: 16rem;
         margin-left: -18px;
         border: 1px solid white;
     }
 
-    .navbar-toggler{
+    .card-4 {
+        width: 19rem;
+        height: 16rem;
+        margin-left: -18px;
+        border: 1px solid grey;
+    }
+
+    .card-4:hover {
+        width: 19rem;
+        height: 16rem;
+        margin-left: -18px;
+        border: 1px solid white;
+    }
+
+    .navbar-toggler {
         margin-left: 268px !important;
         margin-top: -50px !important;
     }
 
-    .soso{
-        width: 60px; 
-        height: 60px; 
-        top: 0.5rem; 
-        right:1rem;
+    .soso {
+        width: 60px;
+        height: 60px;
+        top: 0.5rem;
+        right: 1rem;
     }
 
-    .card-text{
+    .card-text {}
 
-    }
-
-    .job{
+    .job {
         width: 70% !important;
     }
 
-    .n-job{
+    .n-job {
         margin-top: 15px !important;
     }
 
@@ -268,6 +273,344 @@ ul {
     /* Projects */
 
     /* Contacts */
+
+    .card-form {
+        width: 24.8rem;
+        height: 16rem;
+        margin-left: -25px;
+        border: 1px none grey;
+    }
+
+    .form-container {
+        width: 305px;
+        background: linear-gradient(#212121, #212121) padding-box,
+            linear-gradient(145deg, transparent 35%, lightgreen, lightgreen) border-box;
+        border: 2px solid transparent;
+        padding: 32px 24px;
+        font-size: 14px;
+        font-family: inherit;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-sizing: border-box;
+        border-radius: 16px;
+        background-size: 200% 100%;
+        animation: gradient 5s ease infinite;
+        margin-top: -30px;
+        margin-left: 0px;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .form-container button:active {}
+
+    .form-container .form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-container .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .form-container .form-group label {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 5px;
+        color: #717171;
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+    .form-container .form-group input {
+        width: 100%;
+        /* Cambia da 50% a 100% */
+        padding: 12px 16px;
+        border-radius: 8px;
+        color: #fff;
+        font-family: inherit;
+        background-color: transparent;
+        border: 1px solid #414141;
+    }
+
+    .form-container .form-group select {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 8px;
+        color: #fff;
+        font-family: inherit;
+        background-color: #212121;
+        border: 1px solid #414141;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding-right: 40px;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+    }
+
+    .form-container .form-group textarea {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 8px;
+        resize: none;
+        color: #fff;
+        height: 96px;
+        border: 1px solid #414141;
+        background-color: transparent;
+        font-family: inherit;
+    }
+
+    .form-container .form-group input::placeholder {
+        opacity: 0.5;
+    }
+
+    .form-container .form-group select::placeholder {
+        opacity: 0.5;
+    }
+
+    .form-container .form-group select option::placeholder {
+        opacity: 0.5;
+    }
+
+    .form-container .form-group input:focus {
+        outline: none;
+        border-color: #e81cff;
+    }
+
+    .form-container .form-group select:focus {
+        outline: none;
+        border-color: #e81cff;
+    }
+
+    .form-container .form-group textarea:focus {
+        outline: none;
+        border-color: #e81cff;
+    }
+
+    .form-container .form-submit-btn {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        align-self: flex-start;
+        font-family: inherit;
+        color: #717171;
+        font-weight: 600;
+        width: 40%;
+        background: #313131;
+        border: 1px solid #414141;
+        padding: 12px 16px;
+        font-size: inherit;
+        gap: 8px;
+        margin-top: 8px;
+        cursor: pointer;
+        border-radius: 6px;
+    }
+
+    .form-container .form-submit-btn:hover {
+        background-color: #fff;
+        border-color: #fff;
+    }
+
+    .form-container .form-group select option {
+        background-color: #212121;
+        color: #fff;
+        padding: 8px 12px;
+        width: 100%;
+        /* Cambia da 50% a 100% */
+        padding: 12px 16px;
+        border-radius: 8px;
+        color: #fff;
+        font-family: inherit;
+        border: 1px solid #414141;
+    }
+
+    .form-container .form-group select option:checked {
+        background-color: #e81cff;
+        color: #fff;
+    }
+
+    .form-container .form-group select option:hover {
+        background-color: #414141;
+    }
+
+    .form-container .form-group select option:disabled {
+        background-color: #212121;
+        color: #717171;
+    }
+
+    .select-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    .select-wrapper::after {
+        content: '';
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 8px solid #717171;
+        pointer-events: none;
+        transition: transform 0.3s ease;
+    }
+
+    /* Animazione freccia quando select è aperto */
+    .select-wrapper.open::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    .card-information {
+        border: 1px solid white;
+        background-color: #212121;
+    }
+
+    .info-item-1 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-left: -53px;
+        padding: 15px;
+    }
+
+    .info-item-2 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-left: -53px;
+        padding: 15px;
+    }
+
+    .info-item-3 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-left: -53px;
+        padding: 15px;
+    }
+
+    .info-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .info-icon-1 {
+        width: 60px;
+        height: 60px;
+        background-color: #212121;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+    .info-icon-2 {
+        width: 60px;
+        height: 60px;
+        background-color: #212121;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+    .info-icon-3 {
+        width: 60px;
+        height: 60px;
+        background-color: #212121;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+    .info-icon-1 i {
+        font-size: 24px;
+        color: lightgreen;
+    }
+
+    .info-icon-2 i {
+        font-size: 24px;
+        color: lightgreen;
+    }
+
+    .info-icon-3 i {
+        font-size: 24px;
+        color: lightgreen;
+    }
+
+    .info-text {
+        color: white;
+    }
+
+    .info-label-1 {
+        font-size: 21px;
+        color: lightgreen;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-left: -78px;
+    }
+
+    .info-label-2 {
+        font-size: 21px;
+        color: lightgreen;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-left: -110px;
+    }
+
+    .info-label-3 {
+        font-size: 21px;
+        color: lightgreen;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-left: -75px;
+    }
+
+    .info-value-1 {
+        font-size: 16px;
+        width: max-content;
+        color: white;
+        margin: 0;
+    }
+
+    .info-value-2 {
+        font-size: 16px;
+        color: white;
+        margin: 0;
+    }
+
+    .info-value-3 {
+        font-size: 16px;
+        width: max-content;
+        color: white;
+        margin: 0;
+    }
 }
 
 @media (min-width: 375px) {
@@ -291,76 +634,81 @@ ul {
 
     /* Services */
 
-    .card-1{
-        width: 22rem; 
-        height: 16rem; 
-        margin-left: -25px;
-        border: 1px solid grey;
-    }
-    .card-1:hover{
-        width: 22rem; 
-        height: 16rem; 
-        margin-left: -25px;
-        border: 1px solid white;
-    }
-    .card-2{
-        width: 22rem; 
+    .card-1 {
+        width: 22rem;
         height: 16rem;
         margin-left: -25px;
         border: 1px solid grey;
     }
-    .card-2:hover{
-        width: 22rem; 
-        height: 16rem; 
+
+    .card-1:hover {
+        width: 22rem;
+        height: 16rem;
         margin-left: -25px;
         border: 1px solid white;
     }
-    .card-3{
-        width: 22rem; 
-        height: 16rem; 
-        margin-left: -18px;
+
+    .card-2 {
+        width: 22rem;
+        height: 16rem;
+        margin-left: -25px;
         border: 1px solid grey;
     }
-    .card-3:hover{
-        width: 22rem; 
-        height: 16rem; 
-        margin-left: -18px;
+
+    .card-2:hover {
+        width: 22rem;
+        height: 16rem;
+        margin-left: -25px;
         border: 1px solid white;
     }
-    .card-4{
-        width: 22rem; 
-        height: 16rem; 
+
+    .card-3 {
+        width: 22rem;
+        height: 16rem;
         margin-left: -18px;
         border: 1px solid grey;
     }
-    .card-4:hover{
-        width: 22rem; 
-        height: 16rem; 
+
+    .card-3:hover {
+        width: 22rem;
+        height: 16rem;
         margin-left: -18px;
         border: 1px solid white;
     }
 
-    .navbar-toggler{
+    .card-4 {
+        width: 22rem;
+        height: 16rem;
+        margin-left: -18px;
+        border: 1px solid grey;
+    }
+
+    .card-4:hover {
+        width: 22rem;
+        height: 16rem;
+        margin-left: -18px;
+        border: 1px solid white;
+    }
+
+    .navbar-toggler {
         margin-left: 320px !important;
         margin-top: -50px !important;
     }
 
-    .soso{
-        width: 60px; 
-        height: 60px; 
-        top: 0.5rem; 
-        right:1rem;
+    .soso {
+        width: 60px;
+        height: 60px;
+        top: 0.5rem;
+        right: 1rem;
     }
 
-    .card-text{
+    .card-text {}
 
-    }
-
-    .job{
+    .job {
         width: 90% !important;
     }
 
-    .n-job{
+    .n-job {
         margin-top: 15px !important;
     }
 
@@ -369,6 +717,158 @@ ul {
     /* Projects */
 
     /* Contacts */
+
+    .form-container {
+        width: 355px;
+        background: linear-gradient(#212121, #212121) padding-box,
+            linear-gradient(145deg, transparent 35%, lightgreen, lightgreen) border-box;
+        border: 2px solid transparent;
+        padding: 32px 24px;
+        font-size: 14px;
+        font-family: inherit;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-sizing: border-box;
+        border-radius: 16px;
+        background-size: 200% 100%;
+        animation: gradient 5s ease infinite;
+        margin-top: -30px;
+        margin-left: 0px;
+    }
+
+
+
+    .card-information {
+        border: 1px solid white;
+        background-color: #212121;
+    }
+
+    .info-item-1 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-left: -53px;
+        padding: 15px;
+    }
+
+    .info-item-2 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-left: -53px;
+        padding: 15px;
+    }
+
+    .info-item-3 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-left: -53px;
+        padding: 15px;
+    }
+
+    .info-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .info-icon-1 {
+        width: 60px;
+        height: 60px;
+        background-color: #212121;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+    .info-icon-2 {
+        width: 60px;
+        height: 60px;
+        background-color: #212121;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+    .info-icon-3 {
+        width: 60px;
+        height: 60px;
+        background-color: #212121;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+    .info-icon-1 i {
+        font-size: 24px;
+        color: lightgreen;
+    }
+
+    .info-icon-2 i {
+        font-size: 24px;
+        color: lightgreen;
+    }
+
+    .info-icon-3 i {
+        font-size: 24px;
+        color: lightgreen;
+    }
+
+    .info-text {
+        color: white;
+    }
+
+    .info-label-1 {
+        font-size: 21px;
+        color: lightgreen;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-left: -70px;
+    }
+
+    .info-label-2 {
+        font-size: 21px;
+        color: lightgreen;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-left: -110px;
+    }
+
+    .info-label-3 {
+        font-size: 21px;
+        color: lightgreen;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-left: -75px;
+    }
+
+    .info-value-1 {
+        font-size: 16px;
+        color: white;
+        margin: 0;
+    }
+
+    .info-value-2 {
+        font-size: 16px;
+        color: white;
+        margin: 0;
+    }
+
+    .info-value-3 {
+        font-size: 16px;
+        color: white;
+        margin: 0;
+    }
 }
 
 @media (min-width: 425px) {
@@ -394,76 +894,81 @@ ul {
 
     /* Services */
 
-    .card-1{
-        width: 24.8rem; 
-        height: 16rem; 
-        margin-left: -25px;
-        border: 1px solid grey;
-    }
-    .card-1:hover{
-        width: 24.8rem; 
-        height: 16rem; 
-        margin-left: -25px;
-        border: 1px solid white;
-    }
-    .card-2{
-        width: 24.8rem; 
+    .card-1 {
+        width: 24.8rem;
         height: 16rem;
         margin-left: -25px;
         border: 1px solid grey;
     }
-    .card-2:hover{
-        width: 24.8rem; 
-        height: 16rem; 
+
+    .card-1:hover {
+        width: 24.8rem;
+        height: 16rem;
         margin-left: -25px;
         border: 1px solid white;
     }
-    .card-3{
-        width: 24.8rem; 
-        height: 16rem; 
+
+    .card-2 {
+        width: 24.8rem;
+        height: 16rem;
+        margin-left: -25px;
+        border: 1px solid grey;
+    }
+
+    .card-2:hover {
+        width: 24.8rem;
+        height: 16rem;
+        margin-left: -25px;
+        border: 1px solid white;
+    }
+
+    .card-3 {
+        width: 24.8rem;
+        height: 16rem;
         margin-left: -18px;
         border: 1px solid grey;
     }
-    .card-3:hover{
-        width: 24.8rem; 
-        height: 16rem; 
+
+    .card-3:hover {
+        width: 24.8rem;
+        height: 16rem;
         margin-left: -18px;
         border: 1px solid white;
     }
-    .card-4{
-        width: 24.8rem; 
-        height: 16rem; 
+
+    .card-4 {
+        width: 24.8rem;
+        height: 16rem;
         margin-left: -18px;
         border: 2px solid grey;
     }
-    .card-4:hover{
-        width: 24.8rem; 
-        height: 16rem; 
+
+    .card-4:hover {
+        width: 24.8rem;
+        height: 16rem;
         margin-left: -18px;
         border: 2px solid white;
     }
 
-    .navbar-toggler{
+    .navbar-toggler {
         margin-left: 365px !important;
         margin-top: -50px !important;
     }
 
-    .soso{
-        width: 60px; 
-        height: 60px; 
-        top: 0.7rem; 
-        right:1rem;
+    .soso {
+        width: 60px;
+        height: 60px;
+        top: 0.7rem;
+        right: 1rem;
     }
 
-    .card-text{
+    .card-text {}
 
-    }
-
-    .job{
+    .job {
         width: 90% !important;
     }
 
-    .n-job{
+    .n-job {
         margin-top: 15px !important;
     }
 
@@ -472,6 +977,139 @@ ul {
     /* Projects */
 
     /* Contacts */
+
+    .form-container {
+        width: 400px;
+        background: linear-gradient(#212121, #212121) padding-box,
+            linear-gradient(145deg, transparent 35%, lightgreen, lightgreen) border-box;
+        border: 2px solid transparent;
+        padding: 32px 24px;
+        font-size: 14px;
+        font-family: inherit;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-sizing: border-box;
+        border-radius: 16px;
+        background-size: 200% 100%;
+        animation: gradient 5s ease infinite;
+        margin-top: -30px;
+        margin-left: 0px;
+    }
+
+    .card-information {
+        border: 1px solid white;
+        background-color: #212121;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        padding: 15px;
+    }
+
+    .info-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .info-icon-1 {
+        width: 60px;
+        height: 60px;
+        background-color: #212121;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+    .info-icon-2 {
+        width: 60px;
+        height: 60px;
+        background-color: #212121;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+    .info-icon-3 {
+        width: 60px;
+        height: 60px;
+        background-color: #212121;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+    .info-icon-1 i {
+        font-size: 24px;
+        color: lightgreen;
+    }
+
+    .info-icon-2 i {
+        font-size: 24px;
+        color: lightgreen;
+    }
+
+    .info-icon-3 i {
+        font-size: 24px;
+        color: lightgreen;
+    }
+
+    .info-text {
+        color: white;
+    }
+
+    .info-label-1 {
+        font-size: 21px;
+        color: lightgreen;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-left: -70px;
+    }
+
+    .info-label-2 {
+        font-size: 21px;
+        color: lightgreen;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-left: -110px;
+    }
+
+    .info-label-3 {
+        font-size: 21px;
+        color: lightgreen;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-left: -75px;
+    }
+
+    .info-value-1 {
+        font-size: 16px;
+        color: white;
+        margin: 0;
+    }
+
+    .info-value-2 {
+        font-size: 16px;
+        color: white;
+        margin: 0;
+    }
+
+    .info-value-3 {
+        font-size: 16px;
+        color: white;
+        margin: 0;
+    }
 }
 
 @media (min-width: 768px) {
@@ -512,76 +1150,81 @@ ul {
 
     /* Services */
 
-    .card-1{
-        width: 40.4rem; 
-        height: 16rem; 
-        margin-left: -25px;
-        border: 1px solid grey;
-    }
-    .card-1:hover{
-        width: 40.4rem; 
-        height: 16rem; 
-        margin-left: -25px;
-        border: 1px solid white;
-    }
-    .card-2{
+    .card-1 {
         width: 40.4rem;
         height: 16rem;
         margin-left: -25px;
         border: 1px solid grey;
     }
-    .card-2:hover{
+
+    .card-1:hover {
         width: 40.4rem;
         height: 16rem;
         margin-left: -25px;
         border: 1px solid white;
     }
-    .card-3{
-        width: 40.4rem; 
-        height: 16rem; 
-        margin-left: -18px;
+
+    .card-2 {
+        width: 40.4rem;
+        height: 16rem;
+        margin-left: -25px;
         border: 1px solid grey;
     }
-    .card-3:hover{
-        width: 40.4rem; 
-        height: 16rem; 
-        margin-left: -18px;
+
+    .card-2:hover {
+        width: 40.4rem;
+        height: 16rem;
+        margin-left: -25px;
         border: 1px solid white;
     }
-    .card-4{
-        width: 40.4rem; 
-        height: 16rem; 
+
+    .card-3 {
+        width: 40.4rem;
+        height: 16rem;
         margin-left: -18px;
         border: 1px solid grey;
     }
-    .card-4:hover{
-        width: 40.4rem; 
-        height: 16rem; 
+
+    .card-3:hover {
+        width: 40.4rem;
+        height: 16rem;
         margin-left: -18px;
         border: 1px solid white;
     }
 
-    .navbar-toggler{
+    .card-4 {
+        width: 40.4rem;
+        height: 16rem;
+        margin-left: -18px;
+        border: 1px solid grey;
+    }
+
+    .card-4:hover {
+        width: 40.4rem;
+        height: 16rem;
+        margin-left: -18px;
+        border: 1px solid white;
+    }
+
+    .navbar-toggler {
         margin-left: 365px !important;
         margin-top: 0px !important;
     }
 
-    .soso{
-        width: 60px; 
-        height: 60px; 
-        top: 0.9rem; 
-        right:1rem;
+    .soso {
+        width: 60px;
+        height: 60px;
+        top: 0.9rem;
+        right: 1rem;
     }
 
-    .card-text{
+    .card-text {}
 
-    }
-
-    .job{
+    .job {
         width: 90% !important;
     }
 
-    .n-job{
+    .n-job {
         margin-top: 15px !important;
     }
 
@@ -590,6 +1233,163 @@ ul {
     /* Projects */
 
     /* Contacts */
+
+    .form-container {
+        width: 654px;
+        background: linear-gradient(#212121, #212121) padding-box,
+            linear-gradient(145deg, transparent 35%, lightgreen, lightgreen) border-box;
+        border: 2px solid transparent;
+        padding: 32px 24px;
+        font-size: 14px;
+        font-family: inherit;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-sizing: border-box;
+        border-radius: 16px;
+        background-size: 200% 100%;
+        animation: gradient 5s ease infinite;
+        margin-top: -30px;
+        margin-left: 0px;
+    }
+
+    .card-information {
+        border: 1px solid white;
+        background-color: #212121;
+    }
+
+    .info-item-1 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-left: 0px;
+        margin-top: -25px;
+        padding: 15px;
+    }
+
+    .info-item-2 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-left: 0px;
+        margin-top: -25px;
+        padding: 15px;
+    }
+
+    .info-item-3 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-left: 0px;
+        margin-top: -25px;
+        padding: 15px;
+    }
+
+    .info-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .info-icon-1 {
+        width: 60px;
+        height: 60px;
+        background-color: #212121;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        margin-left: -100px;
+        flex-shrink: 0;
+    }
+
+    .info-icon-2 {
+        width: 60px;
+        height: 60px;
+        background-color: #212121;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        margin-left: -10px;
+        flex-shrink: 0;
+    }
+
+    .info-icon-3 {
+        width: 60px;
+        height: 60px;
+        background-color: #212121;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        margin-left: 100px;
+        flex-shrink: 0;
+    }
+
+    .info-icon-1 i {
+        font-size: 24px;
+        color: lightgreen;
+    }
+
+    .info-icon-2 i {
+        font-size: 24px;
+        color: lightgreen;
+    }
+
+    .info-icon-3 i {
+        font-size: 24px;
+        color: lightgreen;
+    }
+
+
+    .info-text {
+        color: white;
+    }
+
+    .info-label-1 {
+        font-size: 21px;
+        color: lightgreen;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-left: -78px;
+    }
+
+    .info-label-2 {
+        font-size: 21px;
+        color: lightgreen;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-left: -112px;
+    }
+
+    .info-label-3 {
+        font-size: 21px;
+        color: lightgreen;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-left: -75px;
+    }
+
+    .info-value-1 {
+        font-size: 16px;
+        color: white;
+        margin: 0;
+    }
+
+    .info-value-2 {
+        font-size: 16px;
+        color: white;
+        margin: 0;
+    }
+
+    .info-value-3 {
+        font-size: 16px;
+        color: white;
+        margin: 0;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -620,8 +1420,8 @@ ul {
 
     .namePt1 {
         width: max-content;
-        font-size: 70px;
-        margin-left: 40px !important;
+        font-size: 60px;
+        margin-left: 50px !important;
     }
 
     .namePt2 {
@@ -646,76 +1446,81 @@ ul {
 
     /* Services */
 
-    .card-1{
-        width: 27rem; 
-        height: 16rem; 
+    .card-1 {
+        width: 27rem;
+        height: 16rem;
         margin-left: 40px;
         border: 1px solid grey;
     }
-    .card-1:hover{
-        width: 27rem; 
-        height: 16rem; 
+
+    .card-1:hover {
+        width: 27rem;
+        height: 16rem;
         margin-left: 40px;
         border: 1px solid white;
     }
-    .card-2{
-        width: 27rem; 
+
+    .card-2 {
+        width: 27rem;
         height: 16rem;
         margin-left: 55px;
         border: 1px solid grey;
     }
-    .card-2:hover{
-        width: 27rem; 
+
+    .card-2:hover {
+        width: 27rem;
         height: 16rem;
-        margin-left: 55px;
-        border: 1px solid white;
-    }
-    .card-3{
-        width: 27rem; 
-        height: 16rem; 
-        margin-left: 47px;
-        border: 1px solid grey;
-    }
-    .card-3:hover{
-        width: 27rem; 
-        height: 16rem; 
-        margin-left: 47px;
-        border: 1px solid white;
-    }
-    .card-4{
-        width: 27rem; 
-        height: 16rem; 
-        margin-left: 55px;
-        border: 1px solid grey;
-    }
-    .card-4:hover{
-        width: 27rem; 
-        height: 16rem; 
         margin-left: 55px;
         border: 1px solid white;
     }
 
-    .navbar-toggler{
+    .card-3 {
+        width: 27rem;
+        height: 16rem;
+        margin-left: 47px;
+        border: 1px solid grey;
+    }
+
+    .card-3:hover {
+        width: 27rem;
+        height: 16rem;
+        margin-left: 47px;
+        border: 1px solid white;
+    }
+
+    .card-4 {
+        width: 27rem;
+        height: 16rem;
+        margin-left: 55px;
+        border: 1px solid grey;
+    }
+
+    .card-4:hover {
+        width: 27rem;
+        height: 16rem;
+        margin-left: 55px;
+        border: 1px solid white;
+    }
+
+    .navbar-toggler {
         margin-left: 365px !important;
         margin-top: 0px !important;
     }
 
-    .soso{
-        width: 60px; 
-        height: 60px; 
-        top: 0.8rem; 
-        right:1rem;
+    .soso {
+        width: 60px;
+        height: 60px;
+        top: 0.8rem;
+        right: 1rem;
     }
 
-    .card-text{
+    .card-text {}
 
-    }
-
-    .job{
+    .job {
         width: 90% !important;
     }
 
-    .n-job{
+    .n-job {
         margin-top: 15px !important;
     }
 
@@ -724,6 +1529,124 @@ ul {
     /* Projects */
 
     /* Contacts */
+
+    .form-container {
+        width: 550px;
+        background: linear-gradient(#212121, #212121) padding-box,
+            linear-gradient(145deg, transparent 35%, lightgreen, lightgreen) border-box;
+        border: 2px solid transparent;
+        padding: 32px 24px;
+        font-size: 14px;
+        font-family: inherit;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-sizing: border-box;
+        border-radius: 16px;
+        background-size: 200% 100%;
+        animation: gradient 5s ease infinite;
+        margin-top: -150px;
+        margin-left: 62px;
+    }
+
+
+    .card-information {
+        border: 1px solid white;
+        background-color: #212121;
+    }
+
+
+    .info-item-1 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-left: 250px !important;
+        padding: 15px;
+    }
+
+    .info-item-2 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-left: 160px !important;
+        padding: 15px;
+    }
+
+    .info-item-3 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-left: 50px !important;
+        padding: 15px;
+    }
+
+    .info-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .info-icon {
+        width: 60px;
+        height: 60px;
+        background-color: #212121;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+    .info-icon i {
+        font-size: 24px;
+        color: lightgreen;
+    }
+
+    .info-text {
+        color: white;
+    }
+
+    .info-label-1 {
+        font-size: 21px;
+        color: lightgreen;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-left: -70px;
+    }
+
+    .info-label-2 {
+        font-size: 21px;
+        color: lightgreen;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-left: -110px;
+    }
+
+    .info-label-3 {
+        font-size: 21px;
+        color: lightgreen;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-left: -75px;
+    }
+
+    .info-value-1 {
+        font-size: 16px;
+        color: white;
+        margin: 0;
+    }
+
+    .info-value-2 {
+        font-size: 16px;
+        color: white;
+        margin: 0;
+    }
+
+    .info-value-3 {
+        font-size: 16px;
+        color: white;
+        margin: 0;
+    }
 
 }
 
@@ -759,7 +1682,7 @@ ul {
 
     .zium {
         margin-top: 140px !important;
-        margin-left: -20px !important;
+        margin-left: -13px !important;
     }
 
 
@@ -812,6 +1735,7 @@ ul {
     .mbare {
         font-size: 20px !important;
         margin-top: 20px !important;
+        margin-left: 25px !important;
     }
 
     .num {
@@ -836,76 +1760,81 @@ ul {
 
     /* Services */
 
-    .card-1{
-        width: 40rem; 
-        height: 16rem; 
-        margin-left: 105px;
+    .card-1 {
+        width: 40rem;
+        height: 16rem;
+        margin-left: 118px;
         border: 1px solid grey;
     }
-    .card-1:hover{
-        width: 40rem; 
-        height: 16rem; 
-        margin-left: 105px;
+
+    .card-1:hover {
+        width: 40rem;
+        height: 16rem;
+        margin-left: 118px;
         border: 1px solid white;
     }
-    .card-2{
-        width: 40rem; 
+
+    .card-2 {
+        width: 40rem;
         height: 16rem;
         margin-left: 18px;
         border: 1px solid grey;
     }
-    .card-2:hover{
-        width: 40rem; 
+
+    .card-2:hover {
+        width: 40rem;
         height: 16rem;
-        margin-left: 18px;
-        border: 1px solid white;
-    }
-    .card-3{
-        width: 40rem; 
-        height: 16rem; 
-        margin-left: 112px;
-        border: 1px solid grey;
-    }
-    .card-3:hover{
-        width: 40rem; 
-        height: 16rem; 
-        margin-left: 112px;
-        border: 1px solid white;
-    }
-    .card-4{
-        width: 40rem; 
-        height: 16rem; 
-        margin-left: 18px;
-        border: 1px solid grey;
-    }
-    .card-4:hover{
-        width: 40rem; 
-        height: 16rem; 
         margin-left: 18px;
         border: 1px solid white;
     }
 
-    .navbar-toggler{
+    .card-3 {
+        width: 40rem;
+        height: 16rem;
+        margin-left: 126px;
+        border: 1px solid grey;
+    }
+
+    .card-3:hover {
+        width: 40rem;
+        height: 16rem;
+        margin-left: 126px;
+        border: 1px solid white;
+    }
+
+    .card-4 {
+        width: 40rem;
+        height: 16rem;
+        margin-left: 18px;
+        border: 1px solid grey;
+    }
+
+    .card-4:hover {
+        width: 40rem;
+        height: 16rem;
+        margin-left: 18px;
+        border: 1px solid white;
+    }
+
+    .navbar-toggler {
         margin-left: 365px !important;
         margin-top: 0px !important;
     }
 
-    .soso{
-        width: 60px; 
-        height: 60px; 
-        top: 0.9rem; 
-        right:1rem;
+    .soso {
+        width: 60px;
+        height: 60px;
+        top: 0.9rem;
+        right: 1rem;
     }
 
-    .card-text{
+    .card-text {}
 
-    }
-
-    .job{
+    .job {
         width: 90% !important;
     }
 
-    .n-job{
+    .n-job {
         margin-top: 15px !important;
     }
 
@@ -919,4 +1848,302 @@ ul {
     /* Projects */
 
     /* Contacts */
+
+
+
+    .form-container {
+        width: 700px;
+        background: linear-gradient(#212121, #212121) padding-box,
+            linear-gradient(145deg, transparent 35%, lightgreen, lightgreen) border-box;
+        border: 2px solid transparent;
+        padding: 32px 24px;
+        font-size: 14px;
+        font-family: inherit;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-sizing: border-box;
+        border-radius: 16px;
+        background-size: 200% 100%;
+        animation: gradient 5s ease infinite;
+        margin-top: -150px;
+        margin-left: 140px;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .form-container button:active {}
+
+    .form-container .form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-container .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .form-container .form-group label {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 5px;
+        color: #717171;
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+    .form-container .form-group input {
+        width: 100%;
+        /* Cambia da 50% a 100% */
+        padding: 12px 16px;
+        border-radius: 8px;
+        color: #fff;
+        font-family: inherit;
+        background-color: transparent;
+        border: 1px solid #414141;
+    }
+
+    .form-container .form-group select {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 8px;
+        color: #fff;
+        font-family: inherit;
+        background-color: #212121;
+        border: 1px solid #414141;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding-right: 40px;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+    }
+
+    .form-container .form-group textarea {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 8px;
+        resize: none;
+        color: #fff;
+        height: 96px;
+        border: 1px solid #414141;
+        background-color: transparent;
+        font-family: inherit;
+    }
+
+    .form-container .form-group input::placeholder {
+        opacity: 0.5;
+    }
+
+    .form-container .form-group select::placeholder {
+        opacity: 0.5;
+    }
+
+    .form-container .form-group select option::placeholder {
+        opacity: 0.5;
+    }
+
+    .form-container .form-group input:focus {
+        outline: none;
+        border-color: #e81cff;
+    }
+
+    .form-container .form-group select:focus {
+        outline: none;
+        border-color: #e81cff;
+    }
+
+    .form-container .form-group textarea:focus {
+        outline: none;
+        border-color: #e81cff;
+    }
+
+    .form-container .form-submit-btn {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        align-self: flex-start;
+        font-family: inherit;
+        color: #717171;
+        font-weight: 600;
+        width: 40%;
+        background: #313131;
+        border: 1px solid #414141;
+        padding: 12px 16px;
+        font-size: inherit;
+        gap: 8px;
+        margin-top: 8px;
+        cursor: pointer;
+        border-radius: 6px;
+    }
+
+    .form-container .form-submit-btn:hover {
+        background-color: #fff;
+        border-color: #fff;
+    }
+
+    .form-container .form-group select option {
+        background-color: #212121;
+        color: #fff;
+        padding: 8px 12px;
+        width: 100%;
+        /* Cambia da 50% a 100% */
+        padding: 12px 16px;
+        border-radius: 8px;
+        color: #fff;
+        font-family: inherit;
+        border: 1px solid #414141;
+    }
+
+    .form-container .form-group select option:checked {
+        background-color: #e81cff;
+        color: #fff;
+    }
+
+    .form-container .form-group select option:hover {
+        background-color: #414141;
+    }
+
+    .form-container .form-group select option:disabled {
+        background-color: #212121;
+        color: #717171;
+    }
+
+    .select-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    .select-wrapper::after {
+        content: '';
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 8px solid #717171;
+        pointer-events: none;
+        transition: transform 0.3s ease;
+    }
+
+    /* Animazione freccia quando select è aperto */
+    .select-wrapper.open::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+
+    .card-information {
+        border: 1px solid white;
+        background-color: #212121;
+    }
+
+    .info-item-1 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-left: 250px !important;
+        padding: 15px;
+    }
+
+    .info-item-2 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-left: 160px !important;
+        padding: 15px;
+    }
+
+    .info-item-3 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-left: 50px !important;
+        padding: 15px;
+    }
+
+    .info-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .info-icon {
+        width: 60px;
+        height: 60px;
+        background-color: #212121;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+    .info-icon i {
+        font-size: 24px;
+        color: lightgreen;
+    }
+
+    .info-text {
+        color: white;
+    }
+
+    .info-label-1 {
+        font-size: 21px;
+        color: lightgreen;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-left: -70px;
+    }
+
+    .info-label-2 {
+        font-size: 21px;
+        color: lightgreen;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-left: -110px;
+    }
+
+    .info-label-3 {
+        font-size: 21px;
+        color: lightgreen;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-left: -75px;
+    }
+
+    .info-value-1 {
+        font-size: 16px;
+        color: white;
+        margin: 0;
+    }
+
+    .info-value-2 {
+        font-size: 16px;
+        color: white;
+        margin: 0;
+    }
+
+    .info-value-3 {
+        font-size: 16px;
+        color: white;
+        margin: 0;
+    }
 }
