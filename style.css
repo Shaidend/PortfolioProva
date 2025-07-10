@@ -190,19 +190,37 @@ ul {
 
     /* Services */
 
+
     .card-1 {
+        position: relative;
         width: 19rem;
         height: 16.5rem;
         margin-left: -25px;
-        border: 1px solid grey;
+        border-radius: 16px;
+        background: #212121;
+        border: none;
+        color: white;
+        overflow: hidden;
+        z-index: 1;
     }
 
-    .card-1:hover {
-        width: 19rem;
-        height: 16rem;
-        margin-left: -25px;
-        border: 1px solid white;
+    .card-1::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        padding: 1px;
+        background: linear-gradient(145deg, transparent 25%, #e81cff, #40c9ff);
+        border-radius: 16px;
+        -webkit-mask:
+            linear-gradient(#e81cff 0 0) content-box,
+            linear-gradient(#e81cff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        animation: gradient 5s ease infinite;
+        background-size: 200% 100%;
+        z-index: -1;
     }
+
 
     .card-2 {
         width: 19rem;
@@ -234,17 +252,31 @@ ul {
 
     .card-4 {
         width: 19rem;
-        height: 16rem;
-        margin-left: -18px;
-        border: 1px solid grey;
+        height: 16.5rem;
+        margin-left: -25px;
+
+        /* 🔥 Variabili CSS per i colori */
+        --gradient-color-1: #e81cff;
+        --gradient-color-2: #40c9ff;
+
+        /* 🔥 Gradient animato con variabili */
+        background: linear-gradient(#212121, #212121) padding-box,
+            linear-gradient(145deg, transparent 35%, var(--gradient-color-1), var(--gradient-color-2)) border-box;
+        border: 2px solid transparent;
+        background-size: 200% 100%;
+        animation: gradient 5s ease infinite;
+        border-radius: 16px;
+        box-sizing: border-box;
+        color: white;
     }
 
+    /* 3. Aggiungi questo hover effect: */
     .card-4:hover {
-        width: 19rem;
-        height: 16rem;
-        margin-left: -18px;
-        border: 1px solid white;
+        /* Cambio solo le variabili dei colori - l'animazione continua */
+        --gradient-color-1: #ff6b35;
+        --gradient-color-2: #f7931e;
     }
+
 
     .navbar-toggler {
         margin-left: 268px !important;
@@ -589,7 +621,7 @@ ul {
         color: lightgreen;
         margin-bottom: 5px;
         font-weight: 500;
-        margin-left: -75px;
+        margin-left: -5px;
     }
 
     .info-value-1 {
@@ -849,7 +881,7 @@ ul {
         color: lightgreen;
         margin-bottom: 5px;
         font-weight: 500;
-        margin-left: -75px;
+        margin-left: -5px;
     }
 
     .info-value-1 {
@@ -1090,7 +1122,7 @@ ul {
         color: lightgreen;
         margin-bottom: 5px;
         font-weight: 500;
-        margin-left: -75px;
+        margin-left: -5px;
     }
 
     .info-value-1 {
@@ -1370,7 +1402,7 @@ ul {
         color: lightgreen;
         margin-bottom: 5px;
         font-weight: 500;
-        margin-left: -75px;
+        margin-left: -5px;
     }
 
     .info-value-1 {
@@ -1627,7 +1659,7 @@ ul {
         color: lightgreen;
         margin-bottom: 5px;
         font-weight: 500;
-        margin-left: -75px;
+        margin-left: -5px;
     }
 
     .info-value-1 {
@@ -2126,7 +2158,7 @@ ul {
         color: lightgreen;
         margin-bottom: 5px;
         font-weight: 500;
-        margin-left: -75px;
+        margin-left: -5px;
     }
 
     .info-value-1 {
@@ -2147,3 +2179,6 @@ ul {
         margin: 0;
     }
 }
+
+
+/* From Uiverse.io by omriluz */
