@@ -204,23 +204,12 @@ ul {
         z-index: 1;
     }
 
-    .card-1::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        padding: 1px;
-        background: linear-gradient(145deg, transparent 25%, #e81cff, #40c9ff);
-        border-radius: 16px;
-        -webkit-mask:
-            linear-gradient(#e81cff 0 0) content-box,
-            linear-gradient(#e81cff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        animation: gradient 5s ease infinite;
-        background-size: 200% 100%;
-        z-index: -1;
+    .card-1:hover {
+        width: 19rem;
+        height: 16rem;
+        margin-left: -25px;
+        border: 1px solid white;
     }
-
 
     .card-2 {
         width: 19rem;
@@ -300,7 +289,87 @@ ul {
         margin-top: 15px !important;
     }
 
-    /* Product */
+    /* Resume */
+
+    .card-changing {
+        width: 18rem;
+        height: 40rem;
+    }
+
+    /* Contenitore principale - maschera per nascondere la scrollbar */
+.mc-fratm-overflow {
+    width: 308px; /* Larghezza aumentata per compensare la scrollbar */
+    height: 300px;
+    margin-left: -80px;
+    margin-top: 30px;
+    border: 1px none lightgreen;
+    overflow-x: hidden;
+    overflow-y: scroll; /* Sempre visibile */
+}
+
+/* Configurazione scrollbar per WebKit (Chrome, Safari, Edge) */
+.mc-fratm-overflow::-webkit-scrollbar {
+    width: 8px;
+}
+
+.mc-fratm-overflow::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+.mc-fratm-overflow::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+
+/* Nasconde le frecce - approccio alternativo */
+.mc-fratm-overflow::-webkit-scrollbar-button {
+    height: 0px;
+    width: 0px;
+    background: transparent;
+    border: none;
+}
+
+.mc-fratm-overflow::-webkit-scrollbar-button:start:decrement,
+.mc-fratm-overflow::-webkit-scrollbar-button:end:increment {
+    height: 0px;
+    width: 0px;
+    background: transparent;
+    border: none;
+}
+
+.mc-fratm-overflow::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* Mostra la scrollbar solo al hover del container */
+.mc-fratm-overflow:hover::-webkit-scrollbar-track {
+    background: transparent; /* Mantiene il track trasparente anche al hover */
+}
+
+.mc-fratm-overflow:hover::-webkit-scrollbar-thumb {
+    background: #4CAF50;
+    border: 1px solid transparent;
+}
+
+.mc-fratm-overflow:hover::-webkit-scrollbar-thumb:hover {
+    background: #45a049;
+}
+
+/* Configurazione per Firefox */
+.mc-fratm-overflow {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.mc-fratm-overflow:hover {
+    scrollbar-color: #4CAF50 transparent;
+}
+
+    .resume-description-1 {
+        width: 100%;
+    }
 
     /* Projects */
 
@@ -670,56 +739,60 @@ ul {
         width: 22rem;
         height: 16rem;
         margin-left: -25px;
-        border: 1px solid grey;
+        border: 2px solid grey !important;
+        border-radius: 14px;
     }
 
     .card-1:hover {
         width: 22rem;
         height: 16rem;
         margin-left: -25px;
-        border: 1px solid white;
+        border: 2px solid lightgreen !important;
     }
 
     .card-2 {
         width: 22rem;
         height: 16rem;
         margin-left: -25px;
-        border: 1px solid grey;
+        border: 2px solid grey !important;
+        border-radius: 14px;
     }
 
     .card-2:hover {
         width: 22rem;
         height: 16rem;
         margin-left: -25px;
-        border: 1px solid white;
+        border: 2px solid lightgreen !important;
     }
 
     .card-3 {
         width: 22rem;
         height: 16rem;
         margin-left: -18px;
-        border: 1px solid grey;
+        border: 2px solid grey !important;
+        border-radius: 14px;
     }
 
     .card-3:hover {
         width: 22rem;
         height: 16rem;
         margin-left: -18px;
-        border: 1px solid white;
+        border: 2px solid lightgreen !important;
     }
 
     .card-4 {
         width: 22rem;
         height: 16rem;
         margin-left: -18px;
-        border: 1px solid grey;
+        border: 2px solid grey !important;
+        border-radius: 14px;
     }
 
     .card-4:hover {
         width: 22rem;
         height: 16rem;
         margin-left: -18px;
-        border: 1px solid white;
+        border: 2px solid lightgreen !important;
     }
 
     .navbar-toggler {
@@ -1714,7 +1787,7 @@ ul {
 
     .zium {
         margin-top: 140px !important;
-        margin-left: -13px !important;
+        margin-left: -23px !important;
     }
 
 
@@ -1795,14 +1868,14 @@ ul {
     .card-1 {
         width: 40rem;
         height: 16rem;
-        margin-left: 118px;
+        margin-left: 105px;
         border: 1px solid grey;
     }
 
     .card-1:hover {
         width: 40rem;
         height: 16rem;
-        margin-left: 118px;
+        margin-left: 105px;
         border: 1px solid white;
     }
 
@@ -1823,14 +1896,14 @@ ul {
     .card-3 {
         width: 40rem;
         height: 16rem;
-        margin-left: 126px;
+        margin-left: 113px;
         border: 1px solid grey;
     }
 
     .card-3:hover {
         width: 40rem;
         height: 16rem;
-        margin-left: 126px;
+        margin-left: 113px;
         border: 1px solid white;
     }
 
@@ -1875,7 +1948,75 @@ ul {
 
 
 
-    /* Product */
+    /* Resume */
+
+    .card-changing {
+        margin-left: -350px;
+        width: 59rem;
+        height: 40rem;
+    }
+
+    .mc-fratm-overflow {
+        width: 850px;
+        height: 400px;
+        margin-left: -30px;
+        border: 1px none lightgreen;
+        overflow-x: hidden;
+    }
+
+    .esperienza-lavorativa {
+        margin-top: 10px;
+    }
+
+    .esperienza-lavorativa1 {
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .card-lavoro-1 {
+        width: 100%;
+        max-height: 90%;
+        height: 12rem;
+        background-color: #212121 !important;
+        color: white;
+        border-radius: 14px;
+    }
+
+    .card-lavoro-2 {
+        width: 100%;
+        max-height: 90%;
+        margin-top: 5px;
+        height: 12rem;
+        background-color: #212121;
+        color: white;
+        border-radius: 14px;
+    }
+
+    .card-lavoro-3 {
+        width: 100%;
+        max-height: 90%;
+        margin-top: 15px;
+        height: 12rem;
+        background-color: #212121;
+        color: white;
+        border-radius: 14px;
+    }
+
+    .job-year {
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+    .job-branch {
+        margin-top: 10px;
+        margin-left: 10px;
+        font-size: 24px;
+    }
+
+    .job-kind {
+        margin-top: 35px;
+        margin-left: 10px;
+    }
 
     /* Projects */
 
@@ -1900,7 +2041,7 @@ ul {
         background-size: 200% 100%;
         animation: gradient 5s ease infinite;
         margin-top: -150px;
-        margin-left: 140px;
+        margin-left: 130px;
     }
 
     @keyframes gradient {
