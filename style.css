@@ -297,75 +297,132 @@ ul {
     }
 
     /* Contenitore principale - maschera per nascondere la scrollbar */
-.mc-fratm-overflow {
-    width: 308px; /* Larghezza aumentata per compensare la scrollbar */
-    height: 300px;
-    margin-left: -80px;
-    margin-top: 30px;
-    border: 1px none lightgreen;
-    overflow-x: hidden;
-    overflow-y: scroll; /* Sempre visibile */
-}
+    .mc-fratm-overflow {
+        width: 308px;
+        /* Larghezza aumentata per compensare la scrollbar */
+        height: 400px;
+        margin-left: -80px;
+        margin-top: 30px;
+        border: 1px none lightgreen;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        /* Sempre visibile */
+    }
 
-/* Configurazione scrollbar per WebKit (Chrome, Safari, Edge) */
-.mc-fratm-overflow::-webkit-scrollbar {
-    width: 8px;
-}
+    .studi{
+        margin-left: -47px !important;
+    }
 
-.mc-fratm-overflow::-webkit-scrollbar-track {
-    background: transparent;
-    border-radius: 10px;
-}
+    .card-lavoro-1 {
+        width: 100%;
+        max-height: 90%;
+        height: 12rem;
+        background-color: #212121 !important;
+        color: white;
+        border-radius: 14px;
+        margin-left: -5px;
+    }
 
-.mc-fratm-overflow::-webkit-scrollbar-thumb {
-    background: transparent;
-    border-radius: 10px;
-    border: 1px solid transparent;
-}
+    .card-lavoro-2 {
+        width: 100%;
+        max-height: 90%;
+        margin-top: 5px;
+        height: 12rem;
+        background-color: #212121;
+        color: white;
+        border-radius: 14px;
+        margin-left: -5px;
+    }
 
-/* Nasconde le frecce - approccio alternativo */
-.mc-fratm-overflow::-webkit-scrollbar-button {
-    height: 0px;
-    width: 0px;
-    background: transparent;
-    border: none;
-}
+    .card-lavoro-3 {
+        width: 100%;
+        max-height: 90%;
+        margin-top: 15px;
+        height: 12rem;
+        background-color: #212121;
+        color: white;
+        border-radius: 14px;
+        margin-left: -5px;
+    }
 
-.mc-fratm-overflow::-webkit-scrollbar-button:start:decrement,
-.mc-fratm-overflow::-webkit-scrollbar-button:end:increment {
-    height: 0px;
-    width: 0px;
-    background: transparent;
-    border: none;
-}
+    .job-year {
+        margin-top: 5px;
+        margin-left: 10px;
+    }
 
-.mc-fratm-overflow::-webkit-scrollbar-corner {
-    background: transparent;
-}
+    .job-branch {
+        margin-top: 10px;
+        margin-left: 10px;
+        font-size: 20px;
+    }
 
-/* Mostra la scrollbar solo al hover del container */
-.mc-fratm-overflow:hover::-webkit-scrollbar-track {
-    background: transparent; /* Mantiene il track trasparente anche al hover */
-}
+    .job-kind {
+        margin-top: 30px;
+        margin-left: 10px;
+    }
 
-.mc-fratm-overflow:hover::-webkit-scrollbar-thumb {
-    background: #4CAF50;
-    border: 1px solid transparent;
-}
 
-.mc-fratm-overflow:hover::-webkit-scrollbar-thumb:hover {
-    background: #45a049;
-}
 
-/* Configurazione per Firefox */
-.mc-fratm-overflow {
-    scrollbar-width: thin;
-    scrollbar-color: transparent transparent;
-}
+    /* Configurazione scrollbar per WebKit (Chrome, Safari, Edge) */
+    .mc-fratm-overflow::-webkit-scrollbar {
+        width: 8px;
+    }
 
-.mc-fratm-overflow:hover {
-    scrollbar-color: #4CAF50 transparent;
-}
+    .mc-fratm-overflow::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 10px;
+    }
+
+    .mc-fratm-overflow::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 10px;
+        border: 1px solid transparent;
+    }
+
+    /* Nasconde le frecce - approccio alternativo */
+    .mc-fratm-overflow::-webkit-scrollbar-button {
+        height: 0px;
+        width: 0px;
+        background: transparent;
+        border: none;
+    }
+
+    .mc-fratm-overflow::-webkit-scrollbar-button:start:decrement,
+    .mc-fratm-overflow::-webkit-scrollbar-button:end:increment {
+        height: 0px;
+        width: 0px;
+        background: transparent;
+        border: none;
+    }
+
+    .mc-fratm-overflow::-webkit-scrollbar-corner {
+        background: transparent;
+    }
+
+    /* Mostra la scrollbar solo al hover del container */
+    .mc-fratm-overflow:hover::-webkit-scrollbar-track {
+        background: transparent;
+        /* Mantiene il track trasparente anche al hover */
+    }
+
+    .mc-fratm-overflow:hover::-webkit-scrollbar-thumb {
+        background: #4CAF50;
+        border: 1px solid transparent;
+    }
+
+    .mc-fratm-overflow:hover::-webkit-scrollbar-thumb:hover {
+        background: #45a049;
+    }
+
+    /* Configurazione per Firefox */
+    .mc-fratm-overflow {
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+    }
+
+    .mc-fratm-overflow:hover {
+        scrollbar-color: #4CAF50 transparent;
+    }
 
     .resume-description-1 {
         width: 100%;
@@ -1954,6 +2011,7 @@ ul {
         margin-left: -350px;
         width: 59rem;
         height: 40rem;
+        margin-top: -100px;
     }
 
     .mc-fratm-overflow {
