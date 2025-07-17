@@ -28,24 +28,17 @@
 
       // Mostra il contenuto selezionato
       const selectedContent = document.getElementById(`content-${contentNumber}`);
-      selectedContent.classList.remove('d-none');
+      if (selectedContent) {
+        selectedContent.classList.remove('d-none');
+      }
 
-      // Aggiorna lo stile dei bottoni
-      const allButtons = document.querySelectorAll('.btn');
-      allButtons.forEach(btn => {
-        btn.classList.remove('btn-active');
-        btn.classList.add('btn-inactive');
-      });
-
-      // Attiva il bottone cliccato
-      clickedButton.classList.remove('btn-inactive');
-      clickedButton.classList.add('btn-active');
+      // Nessuna gestione delle classi dei bottoni
+      // Le classi btn-active/btn-inactive rimangono come le hai impostate nell'HTML
     }
 
     // Inizializza il contenuto al caricamento della pagina
     document.addEventListener('DOMContentLoaded', function () {
       // Il primo contenuto è già visibile per default
-      // Il primo bottone ha già la classe btn-active
     });
   </script>
 
@@ -176,19 +169,43 @@
             <div class="row g-3 ms-lg-5 ms-xl-5 ps-lg-5 ps-xl-5">
               <!-- Prima card -->
               <div class="col-lg-6 col-md-10 col-11 mt-lg-5 pt-lg-3 order-1 order-lg-1 order-lx-1">
-                <div class="card card-for-hiring bg-transparent mt-lg-5 pt-lg-5" style="width: 18rem; height: 23rem;">
+                <div class="card card-for-hiring bg-transparent mt-lg-5 pt-lg-5">
                   <div class="card-body">
                     <h1 class="card-title text-white">Why hire me?</h1>
                     <p class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <div class="d-grid gap-3 col-12 mt-lg-5 pt-lg-5">
-                      <button class="btn btn-primary btn-active" type="button"
-                        onclick="showContent(1, this)">Experience</button>
-                      <button class="btn btn-primary btn-inactive" type="button"
-                        onclick="showContent(2, this)">Education</button>
-                      <button class="btn btn-primary btn-inactive" type="button"
-                        onclick="showContent(3, this)">Skills</button>
-                      <button class="btn btn-primary btn-inactive" type="button" onclick="showContent(4, this)">About
-                        me</button>
+                    <div class="d-md-none d-lg-block" data-layout="desktop">
+                      <div class="d-grid gap-2">
+                        <button class="btn btn-primary btn-active" type="button"
+                          onclick="showContent(1, this)">Experience</button>
+                        <button class="btn btn-primary btn-inactive" type="button"
+                          onclick="showContent(2, this)">Education</button>
+                        <button class="btn btn-primary btn-inactive" type="button"
+                          onclick="showContent(3, this)">Skills</button>
+                        <button class="btn btn-primary btn-inactive" type="button" onclick="showContent(4, this)">About
+                          me</button>
+                      </div>
+                    </div>
+
+                    <!-- Versione Tablet -->
+                    <div class="d-none d-md-block d-lg-none" data-layout="tablet">
+                      <div class="row g-3">
+                        <div class="col-6">
+                          <button class="btn btn-primary btn-active btn-style" type="button"
+                            onclick="showContent(1, this)">Experience</button>
+                        </div>
+                        <div class="col-6">
+                          <button class="btn btn-primary btn-inactive btn-style1" type="button"
+                            onclick="showContent(2, this)">Education</button>
+                        </div>
+                        <div class="col-6">
+                          <button class="btn btn-primary btn-inactive btn-style" type="button"
+                            onclick="showContent(3, this)">Skills</button>
+                        </div>
+                        <div class="col-6">
+                          <button class="btn btn-primary btn-inactive btn-style1" type="button"
+                            onclick="showContent(4, this)">About me</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -196,7 +213,7 @@
 
               <!-- Seconda card -->
               <div class="col-lg-6 col-md-10 col-11 order-2 order-lg-2 order-lx-2">
-                <div class="card card-changing bg-transparent mt-lg-5 pt-lg-5">
+                <div class="card card-changing bg-transparent mt-lg-5 pt-lg-5" style="border: none;">
                   <div class="card-body">
                     <div id="content-1" class="content-section">
                       <h1 class="card-title text-white">Experiences</h1>
@@ -207,7 +224,7 @@
                         <div class="mc-fratm-overflow">
 
                           <!-- Layout Desktop - Griglia con Bootstrap -->
-                          <div class="d-none d-lg-block h-100">
+                          <div class="d-none d-xl-block h-100">
                             <div class="row g-3 h-50">
                               <div class="col-6">
                                 <div class="card custom-card text-white h-100 card-lavoro-1">
@@ -222,7 +239,7 @@
                                 <div class="card custom-card text-white h-100 card-lavoro-1">
                                   <div class="card-body">
                                     <h5 class="card-title job-year">2025 - 2025</h5>
-                                    <p class="card-text job-branch">Web Developer</p>
+                                    <p class="card-text job-branch">Junior Web Developer</p>
                                     <p class="job-kind" style="color: grey;"> • Patreon Website</p>
                                   </div>
                                 </div>
@@ -230,10 +247,58 @@
                             </div>
                           </div>
 
-                          <!-- Layout Mobile - Timeline con Bootstrap -->
-                          <div class="d-lg-none timeline-container position-relative ps-4 py-3">
+                          <!-- Layout Portatile (lg) - Griglia 1x2 -->
+                          <div class="d-none d-lg-block d-xl-none h-100">
+                            <div class="row g-3">
+                              <div class="col-12 mb-3">
+                                <div class="card custom-card text-white h-100 card-lavoro-1">
+                                  <div class="card-body">
+                                    <h5 class="card-title job-year">2025 - 2025</h5>
+                                    <p class="card-text job-branch">Junior Software Developer</p>
+                                    <p class="job-kind" style="color: grey;"> • Arduino programmer</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-12">
+                                <div class="card custom-card text-white h-100 card-lavoro-1">
+                                  <div class="card-body">
+                                    <h5 class="card-title job-year">2025 - 2025</h5>
+                                    <p class="card-text job-branch">Junior Web Developer</p>
+                                    <p class="job-kind" style="color: grey;"> • Patreon Website</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Layout Tablet (md) - Cards compatte -->
+                          <div class="d-none d-md-block d-lg-none">
+                            <div class="row g-3 h-50">
+                              <div class="col-6">
+                                <div class="card custom-card text-white h-100 card-lavoro-1">
+                                  <div class="card-body">
+                                    <h5 class="card-title job-year">2025 - 2025</h5>
+                                    <p class="card-text job-branch">Junior Software Developer</p>
+                                    <p class="job-kind" style="color: grey;"> • Arduino programmer</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-6">
+                                <div class="card custom-card text-white h-100 card-lavoro-1-tablet">
+                                  <div class="card-body">
+                                    <h5 class="card-title job-year">2025 - 2025</h5>
+                                    <p class="card-text job-branch">Junior Web Developer</p>
+                                    <p class="job-kind" style="color: grey;"> • Patreon Website</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Layout Mobile (sm e inferiori) - Timeline -->
+                          <div class="d-md-none timeline-container position-relative ps-4 py-3">
                             <div class="timeline-item position-relative mb-4 ps-4">
-                              <div class="card custom-card text-white card-lavoro-1" style="max-width: 300px;">
+                              <div class="card custom-card text-white card-lavoro-1" style="max-width: 280px;">
                                 <div class="card-body">
                                   <h5 class="card-title job-year">2025 - 2025</h5>
                                   <p class="card-text job-branch">Junior Software Developer</p>
@@ -241,12 +306,11 @@
                                 </div>
                               </div>
                             </div>
-
                             <div class="timeline-item position-relative mb-4 ps-4">
-                              <div class="card custom-card text-white card-lavoro-2" style="max-width: 300px;">
+                              <div class="card custom-card text-white card-lavoro-2" style="max-width: 280px;">
                                 <div class="card-body">
                                   <h5 class="card-title job-year">2025 - 2025</h5>
-                                  <p class="card-text job-branch">Web Developer</p>
+                                  <p class="card-text job-branch">Junior Web Developer</p>
                                   <p class="job-kind" style="color: grey;"> • Patreon Website</p>
                                 </div>
                               </div>
@@ -264,14 +328,15 @@
                       <div class="mc-fratm-overflow studi">
 
                         <!-- Layout Desktop - Griglia con Bootstrap -->
-                        <div class="d-none d-lg-block h-100">
+                        <!-- Layout Desktop - Griglia con Bootstrap -->
+                        <div class="d-none d-xl-block h-100">
                           <div class="row g-3 h-50">
                             <div class="col-6">
                               <div class="card custom-card text-white h-100 card-lavoro-1">
                                 <div class="card-body">
-                                  <h5 class="card-title job-year">2021 - Now</h5>
-                                  <p class="card-text job-branch">Computer Sience</p>
-                                  <p class="job-kind" style="color: grey;"> • ITS Quintino Sella</p>
+                                  <h5 class="card-title job-year">2025 - 2025</h5>
+                                  <p class="card-text job-branch">Junior Web Developer</p>
+                                  <p class="job-kind" style="color: grey;"> • Patreon Website</p>
                                 </div>
                               </div>
                             </div>
@@ -279,104 +344,79 @@
                               <div class="card custom-card text-white h-100 card-lavoro-1">
                                 <div class="card-body">
                                   <h5 class="card-title job-year">2025 - 2025</h5>
-                                  <p class="card-text job-branch">Coding challenge</p>
-                                  <p class="job-kind" style="color: grey;"> • Coding Giants</p>
+                                  <p class="card-text job-branch">Junior Software Developer</p>
+                                  <p class="job-kind" style="color: grey;"> • Arduino programmer</p>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="row g-3 h-50">
-                            <div class="col-6">
-                              <div class="card custom-card text-white h-100 card-lavoro-2">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2024 - 2025</h5>
-                                  <p class="card-text job-branch">IoT course</p>
-                                  <p class="job-kind" style="color: grey;"> • Cisco Networking Academy program</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-6">
-                              <div class="card custom-card text-white h-100 card-lavoro-2">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2024 - 2025</h5>
-                                  <p class="card-text job-branch">Get Connected course</p>
-                                  <p class="job-kind" style="color: grey;"> • Cisco Networking Academy program</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row g-3 h-50">
-                            <div class="col-6">
-                              <div class="card custom-card text-white h-100 card-lavoro-3">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2024 - 2025</h5>
-                                  <p class="card-text job-branch">Introduction to Cybersecurity</p>
-                                  <p class="job-kind" style="color: grey;"> • Cisco Networking Academy program</p>
-                                </div>
-                              </div>
-                            </div>
-                            <!--
-                            <div class="col-6">
-                              <div class="card custom-card text-white h-100 card-lavoro-3">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">---- - ----</h5>
-                                  <p class="card-text job-branch">Job title</p>
-                                  <p class="job-kind" style="color: grey;"> • kind of school</p>
-                                </div>
-                              </div>
-                            </div>
-                            -->
                           </div>
                         </div>
 
-                        <!-- Layout Mobile - Timeline con Bootstrap -->
-                        <div class="d-lg-none timeline-container position-relative ps-4 py-3">
-                          <div class="timeline-item position-relative mb-4 ps-4">
-                            <div class="card custom-card text-white card-lavoro-1" style="max-width: 300px;">
-                              <div class="card-body">
-                                <h5 class="card-title job-year">2021 - Now</h5>
-                                <p class="card-text job-branch">Computer Sience</p>
-                                <p class="job-kind" style="color: grey;"> • ITS Quintino Sella</p>
+                        <!-- Layout Portatile (lg) - Griglia 1x2 -->
+                        <div class="d-none d-lg-block d-xl-none h-100">
+                          <div class="row g-3">
+                            <div class="col-12 mb-3">
+                              <div class="card custom-card text-white h-100 card-lavoro-1">
+                                <div class="card-body">
+                                  <h5 class="card-title job-year">2025 - 2025</h5>
+                                  <p class="card-text job-branch">Junior Software Developer</p>
+                                  <p class="job-kind" style="color: grey;"> • Arduino programmer</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <div class="card custom-card text-white h-100 card-lavoro-1">
+                                <div class="card-body">
+                                  <h5 class="card-title job-year">2025 - 2025</h5>
+                                  <p class="card-text job-branch">Junior Software Developer</p>
+                                  <p class="job-kind" style="color: grey;"> • Arduino programmer</p>
+                                </div>
                               </div>
                             </div>
                           </div>
+                        </div>
 
+                        <!-- Layout Tablet (md) - Cards compatte -->
+                        <div class="d-none d-md-block d-lg-none">
+                          <div class="row g-3 h-50">
+                            <div class="col-6">
+                              <div class="card custom-card text-white h-100 card-lavoro-1">
+                                <div class="card-body">
+                                  <h5 class="card-title job-year">2025 - 2025</h5>
+                                  <p class="card-text job-branch">Junior Software Developer</p>
+                                  <p class="job-kind" style="color: grey;"> • Arduino programmer</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="card custom-card text-white h-100 card-lavoro-1-tablet">
+                                <div class="card-body">
+                                  <h5 class="card-title job-year">2025 - 2025</h5>
+                                  <p class="card-text job-branch">Junior Web Developer</p>
+                                  <p class="job-kind" style="color: grey;"> • Patreon Website</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Layout Mobile (sm e inferiori) - Timeline -->
+                        <div class="d-md-none timeline-container position-relative ps-4 py-3">
                           <div class="timeline-item position-relative mb-4 ps-4">
-                            <div class="card custom-card text-white card-lavoro-2" style="max-width: 300px;">
+                            <div class="card custom-card text-white card-lavoro-1" style="max-width: 280px;">
                               <div class="card-body">
                                 <h5 class="card-title job-year">2025 - 2025</h5>
-                                <p class="card-text job-branch">Coding challenge</p>
-                                <p class="job-kind" style="color: grey;"> • Coding Giants</p>
+                                <p class="card-text job-branch">Junior Software Developer</p>
+                                <p class="job-kind" style="color: grey;"> • Arduino programmer</p>
                               </div>
                             </div>
                           </div>
-
                           <div class="timeline-item position-relative mb-4 ps-4">
-                            <div class="card custom-card text-white card-lavoro-1" style="max-width: 300px;">
+                            <div class="card custom-card text-white card-lavoro-2" style="max-width: 280px;">
                               <div class="card-body">
-                                <h5 class="card-title job-year">2024 - 2025</h5>
-                                <p class="card-text job-branch">IoT course</p>
-                                <p class="job-kind" style="color: grey;"> • Cisco Networking Academy program</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="timeline-item position-relative mb-4 ps-4">
-                            <div class="card text-white card-lavoro-2">
-                              <div class="card-body">
-                                <h5 class="card-title job-year">2024 - 2025</h5>
-                                <p class="card-text job-branch">Get Connected course</p>
-                                <p class="job-kind" style="color: grey;"> • Cisco Networking Academy program</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="timeline-item position-relative mb-4 ps-4">
-                            <div class="card custom-card text-white card-lavoro-1" style="max-width: 300px;">
-                              <div class="card-body">
-                                <h5 class="card-title job-year">2024 - 2025</h5>
-                                <p class="card-text job-branch">Introduction to Cybersecurity</p>
-                                <p class="job-kind" style="color: grey;"> • Cisco Networking Academy program</p>
+                                <h5 class="card-title job-year">2025 - 2025</h5>
+                                <p class="card-text job-branch">Junior Software Developer</p>
+                                <p class="job-kind" style="color: grey;"> • Arduino programmer</p>
                               </div>
                             </div>
                           </div>
