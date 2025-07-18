@@ -19,6 +19,23 @@
   </style>
 
   <script>
+    // Rimuovi tutti gli onclick dall'HTML e usa questo approccio
+    document.addEventListener('DOMContentLoaded', function () {
+      // Gestisce tutti i click sui bottoni
+      document.addEventListener('click', function (event) {
+        // Trova il bottone più vicino (anche se si clicca su un elemento interno)
+        const button = event.target.closest('button[data-content]');
+
+        if (button) {
+          const contentNumber = button.getAttribute('data-content');
+          showContent(parseInt(contentNumber), button);
+        }
+      });
+
+      // Inizializza il primo contenuto
+      showContent(1, null);
+    });
+
     function showContent(contentNumber, clickedButton) {
       // Nasconde tutti i contenuti
       const allContents = document.querySelectorAll('.content-section');
@@ -32,14 +49,20 @@
         selectedContent.classList.remove('d-none');
       }
 
-      // Nessuna gestione delle classi dei bottoni
-      // Le classi btn-active/btn-inactive rimangono come le hai impostate nell'HTML
-    }
+      // Gestisce lo stato di TUTTI i bottoni
+      const allButtons = document.querySelectorAll('button[data-content]');
+      allButtons.forEach(button => {
+        button.classList.remove('btn-active');
+        button.classList.add('btn-inactive');
+      });
 
-    // Inizializza il contenuto al caricamento della pagina
-    document.addEventListener('DOMContentLoaded', function () {
-      // Il primo contenuto è già visibile per default
-    });
+      // Attiva tutti i bottoni corrispondenti al contenuto selezionato
+      const activeButtons = document.querySelectorAll(`button[data-content="${contentNumber}"]`);
+      activeButtons.forEach(button => {
+        button.classList.remove('btn-inactive');
+        button.classList.add('btn-active');
+      });
+    }
   </script>
 
 </head>
@@ -173,16 +196,13 @@
                   <div class="card-body">
                     <h1 class="card-title text-white">Why hire me?</h1>
                     <p class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <!-- Versione Desktop -->
                     <div class="d-md-none d-lg-block" data-layout="desktop">
                       <div class="d-grid gap-2">
-                        <button class="btn btn-primary btn-active" type="button"
-                          onclick="showContent(1, this)">Experience</button>
-                        <button class="btn btn-primary btn-inactive" type="button"
-                          onclick="showContent(2, this)">Education</button>
-                        <button class="btn btn-primary btn-inactive" type="button"
-                          onclick="showContent(3, this)">Skills</button>
-                        <button class="btn btn-primary btn-inactive" type="button" onclick="showContent(4, this)">About
-                          me</button>
+                        <button class="btn btn-primary btn-active" type="button" data-content="1">Experience</button>
+                        <button class="btn btn-primary btn-inactive" type="button" data-content="2">Education</button>
+                        <button class="btn btn-primary btn-inactive" type="button" data-content="3">Skills</button>
+                        <button class="btn btn-primary btn-inactive" type="button" data-content="4">About me</button>
                       </div>
                     </div>
 
@@ -191,19 +211,19 @@
                       <div class="row g-3">
                         <div class="col-6">
                           <button class="btn btn-primary btn-active btn-style" type="button"
-                            onclick="showContent(1, this)">Experience</button>
+                            data-content="1">Experience</button>
                         </div>
                         <div class="col-6">
                           <button class="btn btn-primary btn-inactive btn-style1" type="button"
-                            onclick="showContent(2, this)">Education</button>
+                            data-content="2">Education</button>
                         </div>
                         <div class="col-6">
                           <button class="btn btn-primary btn-inactive btn-style" type="button"
-                            onclick="showContent(3, this)">Skills</button>
+                            data-content="3">Skills</button>
                         </div>
                         <div class="col-6">
-                          <button class="btn btn-primary btn-inactive btn-style1" type="button"
-                            onclick="showContent(4, this)">About me</button>
+                          <button class="btn btn-primary btn-inactive btn-style1" type="button" data-content="4">About
+                            me</button>
                         </div>
                       </div>
                     </div>
