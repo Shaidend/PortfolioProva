@@ -436,6 +436,38 @@ ul {
         width: 100%;
     }
 
+
+    .card-competenze-1 {
+        width: 100px;
+        height: 100px;
+        background-color: #2e2e2e;
+        border-radius: 14px;
+    }
+    .card-competenze-1:hover {
+        width: 100px;
+        height: 100px;
+        background-color: #2e2e2e;
+        border-radius: 14px;
+        color: lightgreen;
+    }
+
+    .competenza {
+        display: inline-block;
+        font-size: 68px;
+        width: auto;
+        /* lascia che si dimensioni naturalmente */
+        height: auto;
+        color: white;
+    }
+    .competenz:hover {
+        display: inline-block;
+        font-size: 68px;
+        width: auto;
+        /* lascia che si dimensioni naturalmente */
+        height: auto;
+        color: lightgreen;
+    }
+
     /* Projects */
 
     /* Contacts */
@@ -1567,13 +1599,15 @@ ul {
         border: none;
     }
 
-    .btn-style{
-        width: 200%;
+    .btn-style {
+        width: 250%;
     }
-    .btn-style1{
-        width: 200%;
+
+    .btn-style1 {
+        width: 250%;
         margin-left: 200px;
     }
+
     .mc-fratm-overflow {
         width: 700px;
         /* Larghezza aumentata per compensare la scrollbar */
@@ -1599,6 +1633,7 @@ ul {
         border-radius: 14px;
         margin-left: 40px;
     }
+
     .card-lavoro-1-tablet {
         width: 90%;
         max-height: 90%;
@@ -1645,6 +1680,24 @@ ul {
     .job-kind {
         margin-top: 30px;
         margin-left: 10px;
+    }
+
+    .card-competenze-1 {
+        width: 100px;
+        height: 100px;
+        background-color: #2e2e2e;
+        border-radius: 14px;
+    }
+    .competenza {
+        display: inline-block;
+        font-size: 68px;
+        width: auto;
+        /* lascia che si dimensioni naturalmente */
+        height: auto;
+    }
+
+    .content-4-section{
+        width: 550px;
     }
 
     /* Projects */
@@ -1943,7 +1996,29 @@ ul {
 
     /* Product */
 
-    /* Projects */
+    /* Resume */
+    .card-for-hiring{
+        margin-left: -70px;
+    }
+    .content-section{
+        margin-left: -150px;
+    }
+
+    .mc-fratm-overflow {
+        width: 500px;
+        /* Larghezza aumentata per compensare la scrollbar */
+        height: 400px;
+        margin-left: -75px;
+        margin-top: 30px;
+        border: 1px none lightgreen;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        /* Sempre visibile */
+    }
+
+    .content-4-section{
+        width: 550px;
+    }
 
     /* Contacts */
 
@@ -2268,11 +2343,17 @@ ul {
         height: 40rem;
         margin-top: -100px;
     }
+    .card-for-hiring{
+        margin-left: -5px;
+    }
+    .content-section{
+        margin-left: 100px;
+    }
 
     .mc-fratm-overflow {
         width: 850px;
         height: 400px;
-        margin-left: -30px;
+        margin-left: -80px;
         border: 1px none lightgreen;
         overflow-x: hidden;
     }
@@ -2287,7 +2368,7 @@ ul {
     }
 
     .card-lavoro-1 {
-        width: 100%;
+        width: 90%;
         max-height: 90%;
         height: 12rem;
         background-color: #212121 !important;
