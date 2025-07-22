@@ -20,50 +20,65 @@
   </style>
 
   <script>
-    // Rimuovi tutti gli onclick dall'HTML e usa questo approccio
+    // JavaScript aggiornato per sincronizzare carousel e card
     document.addEventListener('DOMContentLoaded', function () {
-      // Gestisce tutti i click sui bottoni
-      document.addEventListener('click', function (event) {
-        // Trova il bottone più vicino (anche se si clicca su un elemento interno)
-        const button = event.target.closest('button[data-content]');
+      const carousel = document.getElementById('carouselExample');
+      const projectNumber = document.getElementById('project-number');
+      const projectTitle = document.getElementById('project-title');
+      const projectDescription = document.getElementById('project-description');
+      const languagesUsed = document.getElementById('languages-used');
+      const siteLink = document.getElementById('site-link');
+      const folderLink = document.getElementById('folder-link');
 
-        if (button) {
-          const contentNumber = button.getAttribute('data-content');
-          showContent(parseInt(contentNumber), button);
+      // Dati dei progetti aggiornati
+      const projects = [
+        {
+          number: '01',
+          title: 'E-commerce Platform',
+          description: 'Una piattaforma e-commerce completa con sistema di pagamento integrato, gestione inventario e dashboard amministrativa avanzata.',
+          languages: 'React, Node.js, MongoDB',
+          siteUrl: 'https://example-ecommerce.com',
+          folderUrl: 'https://github.com/username/ecommerce-project'
+        },
+        {
+          number: '02',
+          title: 'Mobile App Design',
+          description: 'Design e sviluppo di un\'applicazione mobile per la gestione eventi con interfaccia intuitiva e funzionalità social integrate.',
+          languages: 'React Native, Firebase',
+          siteUrl: 'https://play.google.com/store/apps/details?id=com.example.app',
+          folderUrl: 'https://github.com/username/mobile-app'
+        },
+        {
+          number: '03',
+          title: 'Corporate Website',
+          description: 'Sito web aziendale responsive con CMS personalizzato, ottimizzazione SEO e integrazione con sistemi di analytics avanzati.',
+          languages: 'Vue.js, PHP, MySQL',
+          siteUrl: 'https://example-corporate.com',
+          folderUrl: 'https://github.com/username/corporate-website'
         }
-      });
+      ];
 
-      // Inizializza il primo contenuto
-      showContent(1, null);
-    });
+      // Funzione per aggiornare la card
+      function updateCard(slideIndex) {
+        const project = projects[slideIndex];
 
-    function showContent(contentNumber, clickedButton) {
-      // Nasconde tutti i contenuti
-      const allContents = document.querySelectorAll('.content-section');
-      allContents.forEach(content => {
-        content.classList.add('d-none');
-      });
-
-      // Mostra il contenuto selezionato
-      const selectedContent = document.getElementById(`content-${contentNumber}`);
-      if (selectedContent) {
-        selectedContent.classList.remove('d-none');
+        // Aggiorna tutti gli elementi
+        projectNumber.textContent = project.number;
+        projectTitle.textContent = project.title;
+        projectDescription.textContent = project.description;
+        languagesUsed.textContent = project.languages;
+        siteLink.href = project.siteUrl;
+        folderLink.href = project.folderUrl;
       }
 
-      // Gestisce lo stato di TUTTI i bottoni
-      const allButtons = document.querySelectorAll('button[data-content]');
-      allButtons.forEach(button => {
-        button.classList.remove('btn-active');
-        button.classList.add('btn-inactive');
+      // Event listener per il cambio slide
+      carousel.addEventListener('slid.bs.carousel', function (event) {
+        updateCard(event.to);
       });
 
-      // Attiva tutti i bottoni corrispondenti al contenuto selezionato
-      const activeButtons = document.querySelectorAll(`button[data-content="${contentNumber}"]`);
-      activeButtons.forEach(button => {
-        button.classList.remove('btn-inactive');
-        button.classList.add('btn-active');
-      });
-    }
+      // Inizializza con il primo progetto
+      updateCard(0);
+    });
   </script>
 
 </head>
@@ -95,8 +110,8 @@
               <div class="navbar-nav ms-lg-5">
                 <a class="nav-link text-white mx-4 fs-5 fs-xl-1" href="index.html">Home</a>
                 <a class="nav-link text-white mx-4 fs-5 fs-xl-1" href="Services.html">Services</a>
-                <a class="nav-link mx-4 fs-5" href="#" style="color: lightgreen;">Resume</a>
-                <a class="nav-link text-white mx-4 fs-5 fs-xl-1" href="#">Projects</a>
+                <a class="nav-link text-white mx-4 fs-5" href="resume.html">Resume</a>
+                <a class="nav-link mx-4 fs-5 fs-xl-1" href="#" style="color: lightgreen;">Projects</a>
                 <a class="nav-link text-white mx-4 fs-5 fs-xl-1" href="contacts.html">Contacts</a>
               </div>
             </div>
@@ -166,7 +181,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white py-3 border-bottom border-light border-opacity-25" href="#">
+              <a class="nav-link text-white py-3 border-bottom border-light border-opacity-25" href="resume.html">
                 <i class="bi bi-box me-2"></i>Resume
               </a>
             </li>
@@ -189,878 +204,115 @@
     <div class="flex-grow-1 d-flex align-items-center justify-content-center mb-5">
       <div class="container-fluid">
         <div class="row justify-content-center">
-          <div class="col-xl-10 col-lg-11">
-            <div class="row g-3 ms-lg-5 ms-xl-5 ps-lg-5 ps-xl-5">
-              <!-- Prima card -->
-              <div class="col-lg-6 col-md-10 col-11 mt-lg-5 pt-lg-3 order-1 order-lg-1 order-lx-1">
-                <div class="card card-for-hiring bg-transparent mt-lg-5 pt-lg-5">
-                  <div class="card-body">
-                    <h1 class="card-title text-white">Why hire me?</h1>
-                    <p class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <!-- Versione Desktop -->
-                    <div class="d-md-none d-lg-block" data-layout="desktop">
-                      <div class="d-grid gap-2">
-                        <button class="btn btn-primary btn-active" type="button" data-content="1">Experience</button>
-                        <button class="btn btn-primary btn-inactive" type="button" data-content="2">Education</button>
-                        <button class="btn btn-primary btn-inactive" type="button" data-content="3">Skills</button>
-                        <button class="btn btn-primary btn-inactive" type="button" data-content="4">About me</button>
+          <div class="col-xl-10 col-lg-11"> <!-- Aumentato da col-xl-8 col-lg-10 -->
+            <div class="row g-3 justify-content-center">
+              <div class="row">
+                <!-- Card aggiornata con il nuovo design -->
+                <div class="col-lg-6 col-md-10 col-11 order-2 order-lg-1">
+                  <div class="card bg-transparent card-1 h-100">
+                    <div class="card-body d-flex flex-column justify-content-between p-4">
+                      <!-- Numero del progetto -->
+                      <div class="mb-4">
+                        <h1 class="project-number" id="project-number" style="font-size: 100px;">01</h1>
                       </div>
-                    </div>
 
-                    <!-- Versione Tablet -->
-                    <div class="d-none d-md-block d-lg-none" data-layout="tablet">
-                      <div class="row g-3">
-                        <div class="col-6">
-                          <button class="btn btn-primary btn-active btn-style" type="button"
-                            data-content="1">Experience</button>
-                        </div>
-                        <div class="col-6">
-                          <button class="btn btn-primary btn-inactive btn-style1" type="button"
-                            data-content="2">Education</button>
-                        </div>
-                        <div class="col-6">
-                          <button class="btn btn-primary btn-inactive btn-style" type="button"
-                            data-content="3">Skills</button>
-                        </div>
-                        <div class="col-6">
-                          <button class="btn btn-primary btn-inactive btn-style1" type="button" data-content="4">About
-                            me</button>
-                        </div>
+                      <!-- Contenuto principale -->
+                      <div class="flex-grow-1">
+                        <!-- Titolo -->
+                        <h2 class="project-title text-white mb-3" id="project-title">Frontend Project</h2>
+
+                        <!-- Descrizione -->
+                        <p class="project-description text-muted" id="project-description">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          Scelerisque consequat, faucibus et, et.
+                        </p>
+
+                        <!-- Linguaggi -->
+                        <p class="project-languages text-info" id="languages-used">Html 5, Css 3, Javascript</p>
+                      </div>
+
+                      <!-- Separatore -->
+                      <hr class="separator" >
+
+                      <!-- Icone/Link -->
+                      <div class="project-links d-flex gap-3">
+                        <a href="#" class="project-link" id="site-link" target="_blank" title="Vai al sito">
+                          <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                          </svg>
+                        </a>
+                        <a href="#" class="project-link" id="folder-link" target="_blank"
+                          title="Vai alla cartella GitHub" style="font-size: 20px;">
+                          <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                            <path
+                              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                          </svg>
+                        </a>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Seconda card -->
-              <div class="col-lg-6 col-md-10 col-11 order-2 order-lg-2 order-lx-2">
-                <div class="card card-changing bg-transparent mt-lg-5 pt-lg-5" style="border: none;">
-                  <div class="card-body">
-                    <div id="content-1" class="content-section">
-                      <h1 class="card-title text-white">Experiences</h1>
-                      <p class="text-white resume-description-1">Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Non
-                        necessitatibus similique nostrum ut quasi nihil quidem.</p>
-                      <ul class="text-white">
-                        <div class="mc-fratm-overflow">
-
-                          <!-- Layout Desktop - Griglia con Bootstrap -->
-                          <div class="d-none d-xl-block h-100">
-                            <div class="row g-3 h-50">
-                              <div class="col-6">
-                                <div class="card custom-card text-white h-100 card-lavoro-1">
-                                  <div class="card-body">
-                                    <h5 class="card-title job-year">2025 - 2025</h5>
-                                    <p class="card-text job-branch">Junior Software Developer</p>
-                                    <p class="job-kind" style="color: grey;"> • Arduino programmer</p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-6">
-                                <div class="card custom-card text-white h-100 card-lavoro-1">
-                                  <div class="card-body">
-                                    <h5 class="card-title job-year">2025 - 2025</h5>
-                                    <p class="card-text job-branch">Junior Web Developer</p>
-                                    <p class="job-kind" style="color: grey;"> • Patreon Website</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                <!-- Carousel (a destra) -->
+                <div class="col-lg-6 col-md-10 col-11 order-1 order-lg-2">
+                  <div class="card bg-transparent card-0">
+                    <div class="card-body align-items-start">
+                      <div id="carouselExample" class="carousel slide" data-bs-touch="true">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="/placeholder.svg?height=400&width=600" class="d-block w-100" alt="Project 1">
                           </div>
-
-                          <!-- Layout Portatile (lg) - Griglia 1x2 -->
-                          <div class="d-none d-lg-block d-xl-none h-100">
-                            <div class="row g-3">
-                              <div class="col-12 mb-3">
-                                <div class="card custom-card text-white h-100 card-lavoro-1">
-                                  <div class="card-body">
-                                    <h5 class="card-title job-year">2025 - 2025</h5>
-                                    <p class="card-text job-branch">Junior Software Developer</p>
-                                    <p class="job-kind" style="color: grey;"> • Arduino programmer</p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-12">
-                                <div class="card custom-card text-white h-100 card-lavoro-1">
-                                  <div class="card-body">
-                                    <h5 class="card-title job-year">2025 - 2025</h5>
-                                    <p class="card-text job-branch">Junior Web Developer</p>
-                                    <p class="job-kind" style="color: grey;"> • Patreon Website</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                          <div class="carousel-item">
+                            <img src="/placeholder.svg?height=400&width=600" class="d-block w-100" alt="Project 2">
                           </div>
-
-                          <!-- Layout Tablet (md) - Cards compatte -->
-                          <div class="d-none d-md-block d-lg-none">
-                            <div class="row g-3 h-50">
-                              <div class="col-6">
-                                <div class="card custom-card text-white h-100 card-lavoro-1">
-                                  <div class="card-body">
-                                    <h5 class="card-title job-year">2025 - 2025</h5>
-                                    <p class="card-text job-branch">Junior Software Developer</p>
-                                    <p class="job-kind" style="color: grey;"> • Arduino programmer</p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-6">
-                                <div class="card custom-card text-white h-100 card-lavoro-1-tablet">
-                                  <div class="card-body">
-                                    <h5 class="card-title job-year">2025 - 2025</h5>
-                                    <p class="card-text job-branch">Junior Web Developer</p>
-                                    <p class="job-kind" style="color: grey;"> • Patreon Website</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <!-- Layout Mobile (sm e inferiori) - Timeline -->
-                          <div class="d-md-none timeline-container position-relative ps-4 py-3">
-                            <div class="timeline-item position-relative mb-4 ps-4">
-                              <div class="card custom-card text-white card-lavoro-1" style="max-width: 280px;">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2025 - 2025</h5>
-                                  <p class="card-text job-branch">Junior Software Developer</p>
-                                  <p class="job-kind" style="color: grey;"> • Arduino programmer</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="timeline-item position-relative mb-4 ps-4">
-                              <div class="card custom-card text-white card-lavoro-2" style="max-width: 280px;">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2025 - 2025</h5>
-                                  <p class="card-text job-branch">Junior Web Developer</p>
-                                  <p class="job-kind" style="color: grey;"> • Patreon Website</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-
-                        </div>
-                      </ul>
-                    </div>
-
-                    <div id="content-2" class="content-section d-none">
-                      <h1 class="card-title text-white">Competenze</h1>
-                      <p class="text-white">Le mie competenze tecniche includono:</p>
-                      <div class="mc-fratm-overflow studi">
-
-                        <!-- Layout Desktop - Griglia con Bootstrap -->
-                        <!-- Layout Desktop - Griglia con Bootstrap -->
-                        <div class="d-none d-xl-block h-100">
-                          <div class="row g-3 h-50">
-                            <div class="col-6">
-                              <div class="card custom-card text-white h-100 card-lavoro-1">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2021 - now</h5>
-                                  <p class="card-text job-branch">CS Student</p>
-                                  <p class="job-kind" style="color: grey;"> • ITIS Quintino Sella</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-6">
-                              <div class="card custom-card text-white h-100 card-lavoro-1">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2025 - 2025</h5>
-                                  <p class="card-text job-branch">Development course</p>
-                                  <p class="job-kind" style="color: grey;"> • Coding Giants</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row g-3 h-50">
-                            <div class="col-6">
-                              <div class="card custom-card text-white h-100 card-lavoro-1">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2024 - 2025</h5>
-                                  <p class="card-text job-branch">Introduction to Cybersecurity course</p>
-                                  <p class="job-kind" style="color: grey;"> • Cisco Networking Academy</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-6">
-                              <div class="card custom-card text-white h-100 card-lavoro-1">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2024 - 2025</h5>
-                                  <p class="card-text job-branch">Introduction to IoT</p>
-                                  <p class="job-kind" style="color: grey;"> • Cisco Networking Academy</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row g-3 h-50">
-                            <div class="col-6">
-                              <div class="card custom-card text-white h-100 card-lavoro-1" style="margin-top: 34px;">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2024 - 2025</h5>
-                                  <p class="card-text job-branch">Get Connected</p>
-                                  <p class="job-kind" style="color: grey;"> • Cisco Networking Academy</p>
-                                </div>
-                              </div>
-                            </div>
+                          <div class="carousel-item">
+                            <img src="/placeholder.svg?height=400&width=600" class="d-block w-100" alt="Project 3">
                           </div>
                         </div>
 
-                        <!-- Layout Portatile (lg) - Griglia 1x2 -->
-                        <div class="d-none d-lg-block d-xl-none h-100">
-                          <div class="row g-3">
-                            <div class="col-12 mb-3">
-                              <div class="card custom-card text-white h-100 card-lavoro-1">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2021 - now</h5>
-                                  <p class="card-text job-branch">CS Student</p>
-                                  <p class="job-kind" style="color: grey;"> • ITIS Quintino Sella</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-12">
-                              <div class="card custom-card text-white h-100 card-lavoro-1">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2025 - 2025</h5>
-                                  <p class="card-text job-branch">Development course</p>
-                                  <p class="job-kind" style="color: grey;"> • Coding Giants</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-12">
-                              <div class="card custom-card text-white h-100 card-lavoro-1">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2024 - 2025</h5>
-                                  <p class="card-text job-branch">Introduction to Cybersecurity course</p>
-                                  <p class="job-kind" style="color: grey;"> • Cisco Networking Academy</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-12">
-                              <div class="card custom-card text-white h-100 card-lavoro-1">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2024 - 2025</h5>
-                                  <p class="card-text job-branch">Introduction to IoT</p>
-                                  <p class="job-kind" style="color: grey;"> • Cisco Networking Academy</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-12">
-                              <div class="card custom-card text-white h-100 card-lavoro-1">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2024 - 2025</h5>
-                                  <p class="card-text job-branch">Get Connected</p>
-                                  <p class="job-kind" style="color: grey;"> • Cisco Networking Academy</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- Layout Tablet (md) - Cards compatte -->
-                        <div class="d-none d-md-block d-lg-none">
-                          <div class="row g-3 h-50">
-                            <div class="col-6">
-                              <div class="card custom-card text-white h-100 card-lavoro-1">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2021 - now</h5>
-                                  <p class="card-text job-branch">CS Student</p>
-                                  <p class="job-kind" style="color: grey;"> • ITIS Quintino Sella</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-6">
-                              <div class="card custom-card text-white h-100 card-lavoro-1-tablet">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2025 - 2025</h5>
-                                  <p class="card-text job-branch">Development course</p>
-                                  <p class="job-kind" style="color: grey;"> • Coding Giants</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-6">
-                              <div class="card custom-card text-white h-100 card-lavoro-1">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2024 - 2025</h5>
-                                  <p class="card-text job-branch">Introduction to Cybersecurity course</p>
-                                  <p class="job-kind" style="color: grey;"> • Cisco Networking Academy</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-6">
-                              <div class="card custom-card text-white h-100 card-lavoro-1" style="margin-left: 20px;">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2024 - 2025</h5>
-                                  <p class="card-text job-branch">Introduction to IoT</p>
-                                  <p class="job-kind" style="color: grey;"> • Cisco Networking Academy</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-6">
-                              <div class="card custom-card text-white h-100 card-lavoro-1">
-                                <div class="card-body">
-                                  <h5 class="card-title job-year">2024 - 2025</h5>
-                                  <p class="card-text job-branch">Get Connected</p>
-                                  <p class="job-kind" style="color: grey;"> • Cisco Networking Academy</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- Layout Mobile (sm e inferiori) - Timeline -->
-                        <div class="d-md-none timeline-container position-relative ps-4 py-3">
-                          <div class="timeline-item position-relative mb-4 ps-4">
-                            <div class="card custom-card text-white card-lavoro-1" style="max-width: 280px;">
-                              <div class="card-body">
-                                <h5 class="card-title job-year">2021 - now</h5>
-                                <p class="card-text job-branch">CS Student</p>
-                                <p class="job-kind" style="color: grey;"> • ITIS Quintino Sella</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="timeline-item position-relative mb-4 ps-4">
-                            <div class="card custom-card text-white card-lavoro-2" style="max-width: 280px;">
-                              <div class="card-body">
-                                <h5 class="card-title job-year">2025 - 2025</h5>
-                                <p class="card-text job-branch">Development course</p>
-                                <p class="job-kind" style="color: grey;"> • Coding Giants</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="timeline-item position-relative mb-4 ps-4">
-                            <div class="card custom-card text-white card-lavoro-1" style="max-width: 280px;">
-                              <div class="card-body">
-                                <h5 class="card-title job-year">2024 - 2025</h5>
-                                <p class="card-text job-branch">Introduction to Cybersecurity course</p>
-                                <p class="job-kind" style="color: grey;"> • Cisco Networking Academy</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="timeline-item position-relative mb-4 ps-4">
-                            <div class="card custom-card text-white card-lavoro-1" >
-                              <div class="card-body">
-                                <h5 class="card-title job-year">2024 - 2025</h5>
-                                <p class="card-text job-branch">Introduction to IoT</p>
-                                <p class="job-kind" style="color: grey;"> • Cisco Networking Academy</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="timeline-item position-relative mb-4 ps-4">
-                            <div class="card custom-card text-white card-lavoro-1" style="max-width: 280px;">
-                              <div class="card-body">
-                                <h5 class="card-title job-year">2024 - 2025</h5>
-                                <p class="card-text job-branch">Get Connected</p>
-                                <p class="job-kind" style="color: grey;"> • Cisco Networking Academy</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-
-                      </div>
-                    </div>
-
-                    <div id="content-3" class="content-section">
-                      <div class="container">
-                        <h1 class="text-white mb-4">Progetti</h1>
-                        <p class="text-white mb-4">Alcuni dei miei progetti più importanti:</p>
-
-                        <!-- Layout Desktop (xl) - 4 colonne -->
-                        <div class="d-none d-xl-block" style="width: 500px;">
-                          <div class="row g-3 mb-3">
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-html5-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-css3-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-javascript-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-bootstrap-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row g-3">
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-csharp-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-python-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-arduino-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-php-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row g-3">
-                            <div class="col-3" style="margin-top: 33px;">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-mysql-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- Layout Laptop (lg) - 3 colonne -->
-                        <div class="d-none d-lg-block d-xl-none">
-                          <div class="row g-3 mb-3">
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-html5-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-css3-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-javascript-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-bootstrap-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row g-3 mb-3">
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-csharp-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-python-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-arduino-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-php-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row g-3 mb-3">
-                            <div class="col-3" style="margin-top: 17px;">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-mysql-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- Layout Tablet (md) - 2 colonne -->
-                        <div class="d-none d-md-block d-lg-none" style="width: 800px;">
-                          <div class="row g-3 mb-3">
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-html5-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-css3-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-javascript-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-bootstrap-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row g-3 mb-3">
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-csharp-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-python-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-arduino-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-3">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-php-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row g-3 mb-3">
-                            <div class="col-3" style="margin-top: 17px;">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-mysql-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- Layout Mobile (sm e inferiori) - 2 colonne come nella foto -->
-                        <div class="d-md-none">
-                          <div class="row g-3 mb-3">
-                            <div class="col-6">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-html5-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-6">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1  align-items-center justify-content-center">
-                                  <i class="devicon-css3-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row g-3 mb-3">
-                            <div class="col-6">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-javascript-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-6">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-bootstrap-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row g-3 mb-3">
-                            <div class="col-6">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-csharp-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-6">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-python-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row g-3">
-                            <div class="col-6">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-arduino-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-6">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-php-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row g-3">
-                            <div class="col-6" style="margin-top: 33px;">
-                              <div class="custom-card">
-                                <div class="card-body card-competenze-1">
-                                  <i class="devicon-mysql-plain competenza"></i>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div id="content-4" class="content-section d-none content-4-section">
-                      <h1 class="card-title text-white">Contatti</h1>
-                      <p class="text-white">Sono sempre disponibile per nuove opportunità:</p>
-                      <!-- Layout Mobile SOLO - Blocchi uno sopra l'altro -->
-                      <div class="d-sm-none" style=" margin-left: -15px;">
-                        <div class="mb-2">
-                          <div class="custom-card">
-                            <div class="card-body py-2">
-                              <div class="row">
-                                <div class="col-5">
-                                  <p class="mb-0" style="color: lightgreen;">Name</p>
-                                </div>
-                                <div class="col-7">
-                                  <p class="mb-0 text-white">David Capezzuto</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="mb-2">
-                          <div class="custom-card">
-                            <div class="card-body py-2">
-                              <div class="row">
-                                <div class="col-5">
-                                  <p class="mb-0" style="color: lightgreen;">Phone</p>
-                                </div>
-                                <div class="col-7">
-                                  <p class="mb-0 text-white" style="width: max-content;">(+39) 351 277 3238</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-
-                        <div class="mb-2">
-                          <div class="custom-card">
-                            <div class="card-body py-2">
-                              <div class="row">
-                                <div class="col-5">
-                                  <p class="mb-0" style="color: lightgreen;">Experience</p>
-                                </div>
-                                <div class="col-7">
-                                  <p class="mb-0 text-white">3+ Years</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="mb-2">
-                          <div class="custom-card">
-                            <div class="card-body py-2">
-                              <div class="row">
-                                <div class="col-5">
-                                  <p class="mb-0" style="color: lightgreen;">Nationality</p>
-                                </div>
-                                <div class="col-7">
-                                  <p class="mb-0 text-white">Italian</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="mb-2">
-                          <div class="custom-card">
-                            <div class="card-body py-2">
-                              <div class="row">
-                                <div class="col-5">
-                                  <p class="mb-0" style="color: lightgreen;">Mail</p>
-                                </div>
-                                <div class="col-7">
-                                  <p class="mb-0 text-white" style="width: max-content;">shaidend8@gmail.com</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="mb-2">
-                          <div class="custom-card">
-                            <div class="card-body py-2">
-                              <div class="row">
-                                <div class="col-5">
-                                  <p class="mb-0" style="color: lightgreen;">Languages</p>
-                                </div>
-                                <div class="col-7">
-                                  <p class="mb-0 text-white">Italian, English</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- ... tutti gli altri elementi mobile ... -->
+                        <!-- Controlli laterali originali -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                          data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                          data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
                       </div>
 
-                      <!-- Layout Tablet E Desktop - Due colonne affiancate come nella foto -->
-                      <div class="d-none d-sm-block" style="margin-left: -15px;">
-                        <div class="row g-3">
-                          <!-- Colonna sinistra -->
-                          <div class="col-6">
-                            <div class="custom-card h-100">
-                              <div class="card-body">
-                                <!-- Name -->
-                                <div class="row mb-3">
-                                  <div class="col-5">
-                                    <p class="mb-0" style="color: lightgreen;">Name</p>
-                                  </div>
-                                  <div class="col-7">
-                                    <p class="mb-0 text-white">David Capezzuto</p>
-                                  </div>
-                                </div>
-
-                                <!-- Experience -->
-                                <div class="row mb-3">
-                                  <div class="col-5">
-                                    <p class="mb-0" style="color: lightgreen;">Experience</p>
-                                  </div>
-                                  <div class="col-7">
-                                    <p class="mb-0 text-white">3+ Years</p>
-                                  </div>
-                                </div>
-
-                                <!-- Nationality -->
-                                <div class="row mb-3">
-                                  <div class="col-5">
-                                    <p class="mb-0" style="color: lightgreen;">Nationality</p>
-                                  </div>
-                                  <div class="col-7">
-                                    <p class="mb-0 text-white">Italian</p>
-                                  </div>
-                                </div>
-
-                                <!-- Freelance -->
-                                <!--
-                                <div class="row mb-0">
-                                  <div class="col-5">
-                                    <p class="mb-0" style="color: lightgreen;">Freelance</p>
-                                  </div>
-                                  <div class="col-7">
-                                    <p class="mb-0 text-white">Not available</p>
-                                  </div>
-                                </div>
-                                -->
-
-                              </div>
-                            </div>
-                          </div>
-
-                          <!-- Colonna destra -->
-                          <div class="col-6" style="margin-left: 0px;">
-                            <div class="custom-card h-100">
-                              <div class="card-body">
-                                <!-- Phone -->
-                                <div class="row mb-3">
-                                  <div class="col-5">
-                                    <p class="mb-0" style="color: lightgreen;">Phone</p>
-                                  </div>
-                                  <div class="col-7">
-                                    <p class="mb-0 text-white" style="width: max-content;">(+39) 351 277 3238</p>
-                                  </div>
-                                </div>
-
-                                <!-- Email -->
-                                <div class="row mb-3">
-                                  <div class="col-5">
-                                    <p class="mb-0" style="color: lightgreen;">Email</p>
-                                  </div>
-                                  <div class="col-7">
-                                    <p class="mb-0 text-white" style="width: max-content;">shaidend8@gmail.com</p>
-                                  </div>
-                                </div>
-
-                                <!-- Languages -->
-                                <div class="row mb-0">
-                                  <div class="col-5">
-                                    <p class="mb-0" style="color: lightgreen;">Languages</p>
-                                  </div>
-                                  <div class="col-7">
-                                    <p class="mb-0 text-white">Italian, English</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                      <!-- Bottoni frecce sotto il carousel -->
+                      <div class="d-flex justify-content-center mt-3 gap-3">
+                        <button class="btn btn-outline-light rounded-circle p-2" type="button"
+                          data-bs-target="#carouselExample" data-bs-slide="prev">
+                          <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                              d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                          </svg>
+                        </button>
+                        <button class="btn btn-outline-light rounded-circle p-2" type="button"
+                          data-bs-target="#carouselExample" data-bs-slide="next">
+                          <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                          </svg>
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
+
           </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
 
 </body>

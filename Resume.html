@@ -1,44 +1,1169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <title>Bootstrap Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet" />
+    <title>Document</title>
+    <link rel="icon" href="TemporaryLogo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.14.0/devicon.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <style> @import url(style.css); </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        @import url(style.css);
+    </style>
+
+    <script>
+        // Rimuovi tutti gli onclick dall'HTML e usa questo approccio
+        document.addEventListener('DOMContentLoaded', function () {
+            // Gestisce tutti i click sui bottoni
+            document.addEventListener('click', function (event) {
+                // Trova il bottone più vicino (anche se si clicca su un elemento interno)
+                const button = event.target.closest('button[data-content]');
+
+                if (button) {
+                    const contentNumber = button.getAttribute('data-content');
+                    showContent(parseInt(contentNumber), button);
+                }
+            });
+
+            // Inizializza il primo contenuto
+            showContent(1, null);
+        });
+
+        function showContent(contentNumber, clickedButton) {
+            // Nasconde tutti i contenuti
+            const allContents = document.querySelectorAll('.content-section');
+            allContents.forEach(content => {
+                content.classList.add('d-none');
+            });
+
+            // Mostra il contenuto selezionato
+            const selectedContent = document.getElementById(`content-${contentNumber}`);
+            if (selectedContent) {
+                selectedContent.classList.remove('d-none');
+            }
+
+            // Gestisce lo stato di TUTTI i bottoni
+            const allButtons = document.querySelectorAll('button[data-content]');
+            allButtons.forEach(button => {
+                button.classList.remove('btn-active');
+                button.classList.add('btn-inactive');
+            });
+
+            // Attiva tutti i bottoni corrispondenti al contenuto selezionato
+            const activeButtons = document.querySelectorAll(`button[data-content="${contentNumber}"]`);
+            activeButtons.forEach(button => {
+                button.classList.remove('btn-inactive');
+                button.classList.add('btn-active');
+            });
+        }
+    </script>
+
 </head>
-<body class="p-3 m-0 border-0 bd-example m-0 border-0">
-    <!-- NavBar -->
-    <div class="container-fluid text-center justify-content-center align-self-center" id="Home">
-        <nav class="navbar navbar-expand-lg bg-transparent text-white" id="nav">
-            <div class="container-fluid">
-              <a class="navbar-brand text-white" href="index.html">David.</a>
-              <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link text-white active" aria-current="page" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="Services.html">Services</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="Resume.html">Resume</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="Projects.html">Projects</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="Contact.html">Contact</a>
-                  </li>
-                </ul>
-              </div>
+
+<body class="body-custom">
+
+    <div class="container-fluid p-0 vh-100 d-flex flex-column">
+        <!-- Navbar Desktop (nascosta su mobile) -->
+        <div class="d-none d-lg-block">
+            <div class="row justify-content-center pt-3">
+                <div class="col-xl-8 col-lg-10">
+                    <nav class="navbar navbar-expand-lg navbar-glass rounded-bottom-4">
+                        <div class="container-fluid justify-content-between">
+                            <a class="navbar-brand text-white mb-1 fs-5 fs-xl-1 me-xl-5" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="120" height="40">
+                                    <defs>
+                                        <style>
+                                            .script-text {
+                                                font-family: 'Parisienne', cursive;
+                                                font-size: 32px;
+                                                fill: white;
+                                                font-weight: normal;
+                                            }
+                                        </style>
+                                    </defs>
+                                    <text x="60" y="28" text-anchor="middle" class="script-text">David</text>
+                                </svg>
+                            </a>
+                            <div class="navbar-nav ms-lg-5">
+                                <a class="nav-link text-white mx-4 fs-5 fs-xl-1" href="index.html">Home</a>
+                                <a class="nav-link text-white mx-4 fs-5 fs-xl-1" href="Services.html">Services</a>
+                                <a class="nav-link mx-4 fs-5" href="#" style="color: lightgreen;">Resume</a>
+                                <a class="nav-link text-white mx-4 fs-5 fs-xl-1" href="test.html">Projects</a>
+                                <a class="nav-link text-white mx-4 fs-5 fs-xl-1" href="contacts.html">Contacts</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
             </div>
-        </nav>
+        </div>
+
+        <!-- Navbar Mobile e Tablet (visibile su mobile e tablet) -->
+        <div class="d-block d-lg-none">
+            <nav class="navbar navbar-glass">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-white" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="120" height="40">
+                            <defs>
+                                <style>
+                                    .script-text {
+                                        font-family: 'Parisienne', cursive;
+                                        font-size: 32px;
+                                        fill: white;
+                                        font-weight: normal;
+                                    }
+                                </style>
+                            </defs>
+                            <text x="60" y="28" text-anchor="middle" class="script-text">David</text>
+                        </svg>
+                    </a>
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <i class="bi bi-list text-white fs-4"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Offcanvas Menu -->
+            <div class="offcanvas offcanvas-end offcanvas-glass" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header border-bottom border-light border-opacity-25">
+                    <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="120" height="40">
+                            <defs>
+                                <style>
+                                    .script-text {
+                                        font-family: 'Parisienne', cursive;
+                                        font-size: 32px;
+                                        fill: white;
+                                        font-weight: normal;
+                                    }
+                                </style>
+                            </defs>
+                            <text x="60" y="28" text-anchor="middle" class="script-text">David</text>
+                        </svg>
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-3 border-bottom border-light border-opacity-25"
+                                href="#index.html">
+                                <i class="bi bi-house me-2"></i>Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-3 border-bottom border-light border-opacity-25"
+                                href="Services.html">
+                                <i class="bi bi-gear me-2"></i>Services
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-3 border-bottom border-light border-opacity-25" href="#">
+                                <i class="bi bi-box me-2"></i>Resume
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-3 border-bottom border-light border-opacity-25" href="test.html">
+                                <i class="bi bi-briefcase me-2"></i>Projects
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-3" href="contacts.html">
+                                <i class="bi bi-envelope me-2"></i>Contacts
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenuto principale centrato -->
+        <div class="flex-grow-1 d-flex align-items-center justify-content-center mb-5">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-xl-10 col-lg-11">
+                        <div class="row g-3 ms-lg-5 ms-xl-5 ps-lg-5 ps-xl-5">
+                            <!-- Prima card -->
+                            <div class="col-lg-6 col-md-10 col-11 mt-lg-5 pt-lg-3 order-1 order-lg-1 order-lx-1">
+                                <div class="card card-for-hiring bg-transparent mt-lg-5 pt-lg-5">
+                                    <div class="card-body">
+                                        <h1 class="card-title text-white">Why hire me?</h1>
+                                        <p class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                        </p>
+                                        <!-- Versione Desktop -->
+                                        <div class="d-md-none d-lg-block" data-layout="desktop">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-custom" type="button"
+                                                    data-content="1">Experience</button>
+                                                <button class="btn btn-custom" type="button"
+                                                    data-content="2">Education</button>
+                                                <button class="btn btn-custom" type="button"
+                                                    data-content="3">Skills</button>
+                                                <button class="btn btn-custom" type="button"
+                                                    data-content="4">About me</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Versione Tablet -->
+                                        <div class="d-none d-md-block d-lg-none" data-layout="tablet">
+                                            <div class="row g-3">
+                                                <div class="col-6">
+                                                    <button class="btn btn-custom" type="button"
+                                                        data-content="1">Experience</button>
+                                                </div>
+                                                <div class="col-6">
+                                                    <button class="btn btn-custom"
+                                                        type="button" data-content="2">Education</button>
+                                                </div>
+                                                <div class="col-6">
+                                                    <button class="btn btn-custom" type="button"
+                                                        data-content="3">Skills</button>
+                                                </div>
+                                                <div class="col-6">
+                                                    <button class="btn btn-custom"
+                                                        type="button" data-content="4">About
+                                                        me</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Seconda card -->
+                            <div class="col-lg-6 col-md-10 col-11 order-2 order-lg-2 order-lx-2">
+                                <div class="card card-changing bg-transparent mt-lg-5 pt-lg-5" style="border: none;">
+                                    <div class="card-body">
+                                        <div id="content-1" class="content-section">
+                                            <h1 class="card-title text-white">Experiences</h1>
+                                            <p class="text-white resume-description-1">Lorem ipsum dolor sit amet
+                                                consectetur adipisicing
+                                                elit. Non
+                                                necessitatibus similique nostrum ut quasi nihil quidem.</p>
+                                            <ul class="text-white">
+                                                <div class="mc-fratm-overflow">
+
+                                                    <!-- Layout Desktop - Griglia con Bootstrap -->
+                                                    <div class="d-none d-xl-block h-100">
+                                                        <div class="row g-3 h-50">
+                                                            <div class="col-6">
+                                                                <div
+                                                                    class="card custom-card text-white h-100 card-lavoro-1">
+                                                                    <div class="card-body">
+                                                                        <h5 class="card-title job-year">2025 - 2025</h5>
+                                                                        <p class="card-text job-branch">Junior Software
+                                                                            Developer</p>
+                                                                        <p class="job-kind" style="color: grey;"> •
+                                                                            Arduino programmer</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div
+                                                                    class="card custom-card text-white h-100 card-lavoro-1">
+                                                                    <div class="card-body">
+                                                                        <h5 class="card-title job-year">2025 - 2025</h5>
+                                                                        <p class="card-text job-branch">Junior Web
+                                                                            Developer</p>
+                                                                        <p class="job-kind" style="color: grey;"> •
+                                                                            Patreon Website</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Layout Portatile (lg) - Griglia 1x2 -->
+                                                    <div class="d-none d-lg-block d-xl-none h-100">
+                                                        <div class="row g-3">
+                                                            <div class="col-12 mb-3">
+                                                                <div
+                                                                    class="card custom-card text-white h-100 card-lavoro-1">
+                                                                    <div class="card-body">
+                                                                        <h5 class="card-title job-year">2025 - 2025</h5>
+                                                                        <p class="card-text job-branch">Junior Software
+                                                                            Developer</p>
+                                                                        <p class="job-kind" style="color: grey;"> •
+                                                                            Arduino programmer</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div
+                                                                    class="card custom-card text-white h-100 card-lavoro-1">
+                                                                    <div class="card-body">
+                                                                        <h5 class="card-title job-year">2025 - 2025</h5>
+                                                                        <p class="card-text job-branch">Junior Web
+                                                                            Developer</p>
+                                                                        <p class="job-kind" style="color: grey;"> •
+                                                                            Patreon Website</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Layout Tablet (md) - Cards compatte -->
+                                                    <div class="d-none d-md-block d-lg-none">
+                                                        <div class="row g-3 h-50">
+                                                            <div class="col-6">
+                                                                <div
+                                                                    class="card custom-card text-white h-100 card-lavoro-1">
+                                                                    <div class="card-body">
+                                                                        <h5 class="card-title job-year">2025 - 2025</h5>
+                                                                        <p class="card-text job-branch">Junior Software
+                                                                            Developer</p>
+                                                                        <p class="job-kind" style="color: grey;"> •
+                                                                            Arduino programmer</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div
+                                                                    class="card custom-card text-white h-100 card-lavoro-1-tablet">
+                                                                    <div class="card-body">
+                                                                        <h5 class="card-title job-year">2025 - 2025</h5>
+                                                                        <p class="card-text job-branch">Junior Web
+                                                                            Developer</p>
+                                                                        <p class="job-kind" style="color: grey;"> •
+                                                                            Patreon Website</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Layout Mobile (sm e inferiori) - Timeline -->
+                                                    <div
+                                                        class="d-md-none timeline-container position-relative ps-4 py-3">
+                                                        <div class="timeline-item position-relative mb-4 ps-4">
+                                                            <div class="card custom-card text-white card-lavoro-1"
+                                                                style="max-width: 280px;">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title job-year">2025 - 2025</h5>
+                                                                    <p class="card-text job-branch">Junior Software
+                                                                        Developer</p>
+                                                                    <p class="job-kind" style="color: grey;"> • Arduino
+                                                                        programmer</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="timeline-item position-relative mb-4 ps-4">
+                                                            <div class="card custom-card text-white card-lavoro-2"
+                                                                style="max-width: 280px;">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title job-year">2025 - 2025</h5>
+                                                                    <p class="card-text job-branch">Junior Web Developer
+                                                                    </p>
+                                                                    <p class="job-kind" style="color: grey;"> • Patreon
+                                                                        Website</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </ul>
+                                        </div>
+
+                                        <div id="content-2" class="content-section d-none">
+                                            <h1 class="card-title text-white">Competenze</h1>
+                                            <p class="text-white">Le mie competenze tecniche includono:</p>
+                                            <div class="mc-fratm-overflow studi">
+
+                                                <!-- Layout Desktop - Griglia con Bootstrap -->
+                                                <!-- Layout Desktop - Griglia con Bootstrap -->
+                                                <div class="d-none d-xl-block h-100">
+                                                    <div class="row g-3 h-50">
+                                                        <div class="col-6">
+                                                            <div
+                                                                class="card custom-card text-white h-100 card-lavoro-1">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title job-year">2021 - now</h5>
+                                                                    <p class="card-text job-branch">CS Student</p>
+                                                                    <p class="job-kind" style="color: grey;"> • ITIS
+                                                                        Quintino Sella</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div
+                                                                class="card custom-card text-white h-100 card-lavoro-1">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title job-year">2025 - 2025</h5>
+                                                                    <p class="card-text job-branch">Development course
+                                                                    </p>
+                                                                    <p class="job-kind" style="color: grey;"> • Coding
+                                                                        Giants</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3 h-50">
+                                                        <div class="col-6">
+                                                            <div
+                                                                class="card custom-card text-white h-100 card-lavoro-1">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title job-year">2024 - 2025</h5>
+                                                                    <p class="card-text job-branch">Introduction to
+                                                                        Cybersecurity course</p>
+                                                                    <p class="job-kind" style="color: grey;"> • Cisco
+                                                                        Networking Academy</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div
+                                                                class="card custom-card text-white h-100 card-lavoro-1">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title job-year">2024 - 2025</h5>
+                                                                    <p class="card-text job-branch">Introduction to IoT
+                                                                    </p>
+                                                                    <p class="job-kind" style="color: grey;"> • Cisco
+                                                                        Networking Academy</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3 h-50">
+                                                        <div class="col-6">
+                                                            <div class="card custom-card text-white h-100 card-lavoro-1"
+                                                                style="margin-top: 34px;">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title job-year">2024 - 2025</h5>
+                                                                    <p class="card-text job-branch">Get Connected</p>
+                                                                    <p class="job-kind" style="color: grey;"> • Cisco
+                                                                        Networking Academy</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Layout Portatile (lg) - Griglia 1x2 -->
+                                                <div class="d-none d-lg-block d-xl-none h-100">
+                                                    <div class="row g-3">
+                                                        <div class="col-12 mb-3">
+                                                            <div
+                                                                class="card custom-card text-white h-100 card-lavoro-1">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title job-year">2021 - now</h5>
+                                                                    <p class="card-text job-branch">CS Student</p>
+                                                                    <p class="job-kind" style="color: grey;"> • ITIS
+                                                                        Quintino Sella</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div
+                                                                class="card custom-card text-white h-100 card-lavoro-1">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title job-year">2025 - 2025</h5>
+                                                                    <p class="card-text job-branch">Development course
+                                                                    </p>
+                                                                    <p class="job-kind" style="color: grey;"> • Coding
+                                                                        Giants</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div
+                                                                class="card custom-card text-white h-100 card-lavoro-1">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title job-year">2024 - 2025</h5>
+                                                                    <p class="card-text job-branch">Introduction to
+                                                                        Cybersecurity course</p>
+                                                                    <p class="job-kind" style="color: grey;"> • Cisco
+                                                                        Networking Academy</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div
+                                                                class="card custom-card text-white h-100 card-lavoro-1">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title job-year">2024 - 2025</h5>
+                                                                    <p class="card-text job-branch">Introduction to IoT
+                                                                    </p>
+                                                                    <p class="job-kind" style="color: grey;"> • Cisco
+                                                                        Networking Academy</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div
+                                                                class="card custom-card text-white h-100 card-lavoro-1">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title job-year">2024 - 2025</h5>
+                                                                    <p class="card-text job-branch">Get Connected</p>
+                                                                    <p class="job-kind" style="color: grey;"> • Cisco
+                                                                        Networking Academy</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Layout Tablet (md) - Cards compatte -->
+                                                <div class="d-none d-md-block d-lg-none">
+                                                    <div class="row g-3 h-50">
+                                                        <div class="col-6">
+                                                            <div
+                                                                class="card custom-card text-white h-100 card-lavoro-1">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title job-year">2021 - now</h5>
+                                                                    <p class="card-text job-branch">CS Student</p>
+                                                                    <p class="job-kind" style="color: grey;"> • ITIS
+                                                                        Quintino Sella</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div
+                                                                class="card custom-card text-white h-100 card-lavoro-1-tablet">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title job-year">2025 - 2025</h5>
+                                                                    <p class="card-text job-branch">Development course
+                                                                    </p>
+                                                                    <p class="job-kind" style="color: grey;"> • Coding
+                                                                        Giants</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div
+                                                                class="card custom-card text-white h-100 card-lavoro-1">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title job-year">2024 - 2025</h5>
+                                                                    <p class="card-text job-branch">Introduction to
+                                                                        Cybersecurity course</p>
+                                                                    <p class="job-kind" style="color: grey;"> • Cisco
+                                                                        Networking Academy</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="card custom-card text-white h-100 card-lavoro-1"
+                                                                style="margin-left: 20px;">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title job-year">2024 - 2025</h5>
+                                                                    <p class="card-text job-branch">Introduction to IoT
+                                                                    </p>
+                                                                    <p class="job-kind" style="color: grey;"> • Cisco
+                                                                        Networking Academy</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div
+                                                                class="card custom-card text-white h-100 card-lavoro-1">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title job-year">2024 - 2025</h5>
+                                                                    <p class="card-text job-branch">Get Connected</p>
+                                                                    <p class="job-kind" style="color: grey;"> • Cisco
+                                                                        Networking Academy</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Layout Mobile (sm e inferiori) - Timeline -->
+                                                <div class="d-md-none timeline-container position-relative ps-4 py-3">
+                                                    <div class="timeline-item position-relative mb-4 ps-4">
+                                                        <div class="card custom-card text-white card-lavoro-1"
+                                                            style="max-width: 280px;">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title job-year">2021 - now</h5>
+                                                                <p class="card-text job-branch">CS Student</p>
+                                                                <p class="job-kind" style="color: grey;"> • ITIS
+                                                                    Quintino Sella</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="timeline-item position-relative mb-4 ps-4">
+                                                        <div class="card custom-card text-white card-lavoro-2"
+                                                            style="max-width: 280px;">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title job-year">2025 - 2025</h5>
+                                                                <p class="card-text job-branch">Development course</p>
+                                                                <p class="job-kind" style="color: grey;"> • Coding
+                                                                    Giants</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="timeline-item position-relative mb-4 ps-4">
+                                                        <div class="card custom-card text-white card-lavoro-1"
+                                                            style="max-width: 280px;">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title job-year">2024 - 2025</h5>
+                                                                <p class="card-text job-branch">Introduction to
+                                                                    Cybersecurity course</p>
+                                                                <p class="job-kind" style="color: grey;"> • Cisco
+                                                                    Networking Academy</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="timeline-item position-relative mb-4 ps-4">
+                                                        <div class="card custom-card text-white card-lavoro-1">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title job-year">2024 - 2025</h5>
+                                                                <p class="card-text job-branch">Introduction to IoT</p>
+                                                                <p class="job-kind" style="color: grey;"> • Cisco
+                                                                    Networking Academy</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="timeline-item position-relative mb-4 ps-4">
+                                                        <div class="card custom-card text-white card-lavoro-1"
+                                                            style="max-width: 280px;">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title job-year">2024 - 2025</h5>
+                                                                <p class="card-text job-branch">Get Connected</p>
+                                                                <p class="job-kind" style="color: grey;"> • Cisco
+                                                                    Networking Academy</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+
+                                        <div id="content-3" class="content-section">
+                                            <div class="container">
+                                                <h1 class="text-white mb-4">Progetti</h1>
+                                                <p class="text-white mb-4">Alcuni dei miei progetti più importanti:</p>
+
+                                                <!-- Layout Desktop (xl) - 4 colonne -->
+                                                <div class="d-none d-xl-block" style="width: 500px;">
+                                                    <div class="row g-3 mb-3">
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-html5-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-css3-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-javascript-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-bootstrap-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3">
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-csharp-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-python-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-arduino-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-php-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3">
+                                                        <div class="col-3" style="margin-top: 33px;">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-mysql-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Layout Laptop (lg) - 3 colonne -->
+                                                <div class="d-none d-lg-block d-xl-none">
+                                                    <div class="row g-3 mb-3">
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-html5-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-css3-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-javascript-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-bootstrap-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3 mb-3">
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-csharp-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-python-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-arduino-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-php-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3 mb-3">
+                                                        <div class="col-3" style="margin-top: 17px;">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-mysql-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Layout Tablet (md) - 2 colonne -->
+                                                <div class="d-none d-md-block d-lg-none" style="width: 800px;">
+                                                    <div class="row g-3 mb-3">
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-html5-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-css3-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-javascript-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-bootstrap-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3 mb-3">
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-csharp-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-python-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-arduino-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-php-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3 mb-3">
+                                                        <div class="col-3" style="margin-top: 17px;">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-mysql-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Layout Mobile (sm e inferiori) - 2 colonne come nella foto -->
+                                                <div class="d-md-none">
+                                                    <div class="row g-3 mb-3">
+                                                        <div class="col-6">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-html5-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="custom-card">
+                                                                <div
+                                                                    class="card-body card-competenze-1  align-items-center justify-content-center">
+                                                                    <i class="devicon-css3-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3 mb-3">
+                                                        <div class="col-6">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-javascript-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-bootstrap-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3 mb-3">
+                                                        <div class="col-6">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-csharp-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-python-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3">
+                                                        <div class="col-6">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-arduino-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-php-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3">
+                                                        <div class="col-6" style="margin-top: 33px;">
+                                                            <div class="custom-card">
+                                                                <div class="card-body card-competenze-1">
+                                                                    <i class="devicon-mysql-plain competenza"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="content-4" class="content-section d-none content-4-section">
+                                            <h1 class="card-title text-white">Contatti</h1>
+                                            <p class="text-white">Sono sempre disponibile per nuove opportunità:</p>
+                                            <!-- Layout Mobile SOLO - Blocchi uno sopra l'altro -->
+                                            <div class="d-sm-none" style=" margin-left: -15px;">
+                                                <div class="mb-2">
+                                                    <div class="custom-card">
+                                                        <div class="card-body py-2">
+                                                            <div class="row">
+                                                                <div class="col-5">
+                                                                    <p class="mb-0" style="color: lightgreen;">Name</p>
+                                                                </div>
+                                                                <div class="col-7">
+                                                                    <p class="mb-0 text-white">David Capezzuto</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-2">
+                                                    <div class="custom-card">
+                                                        <div class="card-body py-2">
+                                                            <div class="row">
+                                                                <div class="col-5">
+                                                                    <p class="mb-0" style="color: lightgreen;">Phone</p>
+                                                                </div>
+                                                                <div class="col-7">
+                                                                    <p class="mb-0 text-white"
+                                                                        style="width: max-content;">(+39) 351 277 3238
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="mb-2">
+                                                    <div class="custom-card">
+                                                        <div class="card-body py-2">
+                                                            <div class="row">
+                                                                <div class="col-5">
+                                                                    <p class="mb-0" style="color: lightgreen;">
+                                                                        Experience</p>
+                                                                </div>
+                                                                <div class="col-7">
+                                                                    <p class="mb-0 text-white">3+ Years</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-2">
+                                                    <div class="custom-card">
+                                                        <div class="card-body py-2">
+                                                            <div class="row">
+                                                                <div class="col-5">
+                                                                    <p class="mb-0" style="color: lightgreen;">
+                                                                        Nationality</p>
+                                                                </div>
+                                                                <div class="col-7">
+                                                                    <p class="mb-0 text-white">Italian</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-2">
+                                                    <div class="custom-card">
+                                                        <div class="card-body py-2">
+                                                            <div class="row">
+                                                                <div class="col-5">
+                                                                    <p class="mb-0" style="color: lightgreen;">Mail</p>
+                                                                </div>
+                                                                <div class="col-7">
+                                                                    <p class="mb-0 text-white"
+                                                                        style="width: max-content;">shaidend8@gmail.com
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-2">
+                                                    <div class="custom-card">
+                                                        <div class="card-body py-2">
+                                                            <div class="row">
+                                                                <div class="col-5">
+                                                                    <p class="mb-0" style="color: lightgreen;">Languages
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-7">
+                                                                    <p class="mb-0 text-white">Italian, English</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- ... tutti gli altri elementi mobile ... -->
+                                            </div>
+
+                                            <!-- Layout Tablet E Desktop - Due colonne affiancate come nella foto -->
+                                            <div class="d-none d-sm-block" style="margin-left: -15px;">
+                                                <div class="row g-3">
+                                                    <!-- Colonna sinistra -->
+                                                    <div class="col-6">
+                                                        <div class="custom-card h-100">
+                                                            <div class="card-body">
+                                                                <!-- Name -->
+                                                                <div class="row mb-3">
+                                                                    <div class="col-5">
+                                                                        <p class="mb-0" style="color: lightgreen;">Name
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <p class="mb-0 text-white">David Capezzuto</p>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Experience -->
+                                                                <div class="row mb-3">
+                                                                    <div class="col-5">
+                                                                        <p class="mb-0" style="color: lightgreen;">
+                                                                            Experience</p>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <p class="mb-0 text-white">3+ Years</p>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Nationality -->
+                                                                <div class="row mb-3">
+                                                                    <div class="col-5">
+                                                                        <p class="mb-0" style="color: lightgreen;">
+                                                                            Nationality</p>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <p class="mb-0 text-white">Italian</p>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Freelance -->
+                                                                <!--
+                                <div class="row mb-0">
+                                  <div class="col-5">
+                                    <p class="mb-0" style="color: lightgreen;">Freelance</p>
+                                  </div>
+                                  <div class="col-7">
+                                    <p class="mb-0 text-white">Not available</p>
+                                  </div>
+                                </div>
+                                -->
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Colonna destra -->
+                                                    <div class="col-6" style="margin-left: 0px;">
+                                                        <div class="custom-card h-100">
+                                                            <div class="card-body">
+                                                                <!-- Phone -->
+                                                                <div class="row mb-3">
+                                                                    <div class="col-5">
+                                                                        <p class="mb-0" style="color: lightgreen;">Phone
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <p class="mb-0 text-white"
+                                                                            style="width: max-content;">(+39) 351 277
+                                                                            3238</p>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Email -->
+                                                                <div class="row mb-3">
+                                                                    <div class="col-5">
+                                                                        <p class="mb-0" style="color: lightgreen;">Email
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <p class="mb-0 text-white"
+                                                                            style="width: max-content;">
+                                                                            shaidend8@gmail.com</p>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Languages -->
+                                                                <div class="row mb-0">
+                                                                    <div class="col-5">
+                                                                        <p class="mb-0" style="color: lightgreen;">
+                                                                            Languages</p>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <p class="mb-0 text-white">Italian, English</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 </body>
+
 </html>

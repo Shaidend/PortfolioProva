@@ -294,8 +294,8 @@ ul {
     /* CSS personalizzato per i bottoni */
 .btn-custom {
   /* Rimuove tutti gli stili Bootstrap btn-primary */
-  background-color: transparent !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  background-color: #2e2e2e !important;
+  border: none !important;
   color: #ffffff !important;
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
@@ -305,32 +305,25 @@ ul {
 
 /* Stato normale (inattivo) */
 .btn-custom.btn-inactive {
-  background-color: transparent !important;
-  border-color: rgba(255, 255, 255, 0.3) !important;
-  color: rgba(255, 255, 255, 0.7) !important;
+  background-color: #2e2e2e !important;
+  color: white !important;
 }
 
 /* Stato attivo (selezionato) */
 .btn-custom.btn-active {
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  border-color: rgba(255, 255, 255, 0.8) !important;
-  color: #ffffff !important;
-  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+  background-color: lightgreen !important;
+  color: black !important;
 }
 
 /* Hover per bottoni inattivi */
 .btn-custom.btn-inactive:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  border-color: rgba(255, 255, 255, 0.6) !important;
-  color: #ffffff !important;
-  transform: translateY(-1px);
+  background-color: lightgreen !important;
+  color: black !important;
 }
 
 /* Hover per bottoni attivi */
 .btn-custom.btn-active:hover {
-  background-color: rgba(255, 255, 255, 0.3) !important;
-  border-color: #ffffff !important;
-  transform: translateY(-1px);
+  background-color: lightgreen !important;
 }
 
 /* Focus (accessibilità) */
@@ -530,6 +523,66 @@ ul {
     }
 
     /* Projects */
+
+    /* CSS aggiornato */
+.carousel-item img {
+  border-radius: 0.5rem;
+  object-fit: cover;
+  height: 400px;
+}
+
+/* Stile per i bottoni freccia sotto */
+.btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Animazione per il cambio contenuto della card */
+.card-1 .job,
+.card-1 .card-text,
+.card-1 .n-job,
+.card-1 #languages-used {
+  transition: all 0.3s ease;
+}
+
+/* Stile per i linguaggi */
+#languages-used {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* Migliora i bottoni della card */
+.btn-primary.rounded-pill {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary.rounded-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Migliora i controlli laterali del carousel */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  opacity: 0.7;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
 
     /* Contacts */
 
